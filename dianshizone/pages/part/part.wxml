@@ -1,0 +1,69 @@
+<block wx:if="{{hiden}}">
+<view class="part">
+  <view class="top">
+    <view class="bottom">
+        <view class="btm">
+            <view class="gz">{{res.title}}</view>
+            <view class="price">{{res.money}}</view>
+        </view>
+        <view class="btms">
+          <view class="rq">{{res.place}}</view>
+          <view class="dd">{{res.deadline}}</view>
+        </view>
+      </view>
+  </view>
+  
+  <view class="xq">任务详情</view>
+  <view class="detail">
+    <view class="title">工作内容</view>
+    <text class="content" decode="{{true}}" space="{{true}}">{{res.content}}</text>
+    <view class="title">职位要求</view>
+    <text class="content" decode="{{true}}" space="{{true}}">{{res.details}}</text>
+  </view>
+  <view class="middle">
+    <view class="user">
+      <view><image class="image" src="{{res.avatarurl}}"></image></view>
+      <view class="gs">
+        <view class="name">{{res.nickname}}</view>
+        <view class="hy">
+          DDD
+          <image class="dian" src="../../images/dian.png"></image>
+          0-99人
+        </view>
+      </view>
+      <view class="jt"><image style="width:24rpx;height:24rpx;" src="../../images/jt.png"></image></view>
+    </view>
+  </view>
+</view>
+<block wx:if="{{userid != res.uid}}">
+  <block wx:if="{{status == 1}}">
+    <button class="tou" bindtap="apply">申请任务</button>
+  </block>
+  <block wx:if="{{status == 2}}">
+    <block wx:if="{{state == 1}}">
+      <button class="tou" style="background-color:#ccc">已申请</button>
+    </block>
+    <block wx:if="{{state == 2}}">
+      <view class="btn">
+        <button class="tous" bindtap="accept">接受任务</button>
+        <button class="tous" bindtap="giveup">放弃任务</button>
+      </view>
+    </block>
+    <block wx:if="{{state == 5}}">
+      <button class="tous" bindtap="complete">完成任务</button>
+      <button class="tous" bindtap="giveup">放弃任务</button>
+    </block>
+    <block wx:if="{{state == 3}}">
+      <button class="tou" style="background-color:#ccc">已完成</button>
+    </block>
+    <block wx:if="{{state == 4}}">
+      <button class="tou" style="background-color:#ccc">已放弃</button>
+    </block>
+  </block>
+</block>
+</block>
+<block wx:if="{{hiden == 0}}">
+  <view class="jzs">
+    <image class="jz actives" src="../../images/zzz.png"></image>
+  </view>
+</block>

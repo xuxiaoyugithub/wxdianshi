@@ -1,0 +1,23 @@
+<view class="all">
+<view class="alls">
+<form bindsubmit="formSubmit">
+  <view class="lineHeight" type="text">银行卡号:
+     <input class='input-7' name="number" value="{{userInputCardNum}}" bindinput="bankcardInput" placeholder='请输入银行卡号'></input>
+  </view>
+  <view class="lineHeight" type="text">卡类型:
+     <input class='input' name="type" value="{{cardType}}" bindinput="bankcardTypeInput" placeholder='类型'></input>
+  </view>
+  <view class="lineHeight" type="text">持卡人:
+     <input class='input' name="name" placeholder='持卡人'></input>
+  </view>
+  <view class="lineHeight" type="number">预留手机号:
+     <input class='input' name="phone" placeholder='预留手机号'></input>
+  </view>
+  
+  <!-- <view class="lineHeight ms" type="text"><view>项目描述:</view>
+     <textarea class='input-7' name="describe" placeholder='项目描述'></textarea>
+  </view> -->
+  <button formType="submit" style="background:#179b16;">添加</button>
+  </form>
+</view>
+</view>

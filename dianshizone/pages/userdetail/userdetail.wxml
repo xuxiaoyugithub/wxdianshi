@@ -1,0 +1,62 @@
+<view wx:if="{{hiden != 0}}">
+  <view class="user">
+    <image src="{{user.avatarurl}}"></image>
+    <view class="name">{{user.nickname}}</view>
+    <block wx:if="{{userid == uid}}">
+      <navigator url="./userdata/userdata?uid={{uid}}">
+        <view class="gz">个人资料</view>
+      </navigator>
+    </block>
+    <block wx:if="{{userid != uid && userid != 0}}">
+      <view wx:if="{{state == 0}}" class="gz" bindtap="follow">+关注</view>
+      <view wx:if="{{state == 1}}" class="gz" bindtap="cancels" data-bgid="{{uid}}" data-gzid="{{userid}}">取消关注</view>
+    </block>
+  </view>
+  <view class="middle">
+    <view class="num">
+      <view bindtap="cur1" class="num1">
+        <view>{{scount}}</view>
+        <view>文章</view>
+      </view>
+      <view bindtap="cur2" class="num2">
+        <view>{{follow}}</view>
+        <view>关注</view>
+      </view>
+      <view bindtap="cur3" class="num3">
+        <view>{{fans}}</view>
+        <view>粉丝</view>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{cur == 0}}" wx:for="{{space}}">
+    <navigator url="../space/space?id={{item.id}}">
+    <view class="article">
+      <view class="title">{{item.title}}</view>
+      <view class="time">{{item.created_at}}</view>
+      <view class="content">
+        {{item.content}}
+      </view>
+    </view>
+    </navigator>
+    <view class="fg"></view>
+  </block>
+  <block wx:if="{{cur == 1}}" wx:for="{{users}}">
+    <view class="users">
+      <image src="{{item.avatarurl}}"></image>
+      <view class="names">{{item.nickname}}</view>
+      <navigator class="dd" bindtap="detail" data-uid="{{item.bgid}}">查看详情</navigator>
+    </view>
+  </block>
+  <block wx:if="{{cur == 2}}" wx:for="{{users}}">
+    <view class="users">
+      <image src="{{item.avatarurl}}"></image>
+      <view class="names">{{item.nickname}}</view>
+      <navigator class="dd" bindtap="details" data-uid="{{item.gzid}}">查看详情</navigator>
+    </view>
+  </block>
+</view>
+<block wx:if="{{hiden == 0}}">
+  <view class="jzs">
+    <image class="jz actives" src="../../images/zzz.png"></image>
+  </view>
+</block>

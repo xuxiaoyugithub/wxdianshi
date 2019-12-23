@@ -1,0 +1,18 @@
+<view class="all">
+  <view class="top">
+    <view class="sj">点识空间</view>
+    <view class="money">{{item.status == 1 ? '+' : '-'}}{{res.money}}</view>
+  </view>
+  <view class="btm">
+    <view class="left">类型:</view>
+    <view class="right">{{res.content}}</view>
+  </view>
+  <view class="btm">
+    <view class="left">时间:</view>
+    <view class="right">{{res.created_at}}</view>
+  </view>
+  <view class="btm">
+    <view class="left">余额:</view>
+    <view class="right">￥{{res.balance}}</view>
+  </view>
+</view>

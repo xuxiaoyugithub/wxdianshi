@@ -1,0 +1,120 @@
+.b2{
+  width: 90%;
+  padding:20rpx;
+  border-bottom:1px solid #ccc;
+  background-color: white;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin:auto;
+}
+.left{
+  display:flex;
+  flex-direction: column;
+}
+.user{
+  width:100%;
+  padding-bottom:20rpx;
+  display:flex;
+  flex-direction: row;
+  font-size:30px;
+  align-items: center;
+  justify-content: center;
+}
+.update{
+  padding-left:20rpx;
+  padding-right:20rpx;
+  width:60rpx;
+  height:60rpx;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.update image{
+  width:24rpx;
+  height:24rpx;
+}
+.btm{
+  font-size:13px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  color:#666666;
+}
+.dian{
+  width:7rpx;
+  height:7rpx;
+  padding:10rpx;
+}
+.photo{
+  width:120rpx;
+  height:120rpx;
+}
+.photo image{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 60rpx;
+}
+.b3{
+  width: 90%;
+  padding:20rpx;
+  border-bottom:1px solid #ccc;
+  background-color: white;
+  /* display:flex;
+  align-items: center;
+  justify-content: space-between; */
+  margin:auto;
+}
+.top{
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom:20rpx;
+  font-size:16px;
+}
+.image{
+  width:24rpx;
+  height:24rpx;
+  padding-left:10rpx;
+  padding-right:10rpx;
+}
+.xm{
+  font-weight: bold;
+}
+.title{
+  padding-top:20rpx;
+  font-size:14px;
+}
+.time{
+  font-size:12px;
+  color:#999999;
+  padding-top:20rpx;
+}
+.honor{
+  padding-bottom:20rpx;
+}
+.minfont{
+  font-size:13px;
+  color:#666666;
+}
+.label{
+  font-size:12px;
+  color:#999999;
+  padding-bottom:20rpx;
+}
+.labels{
+  display:flex;
+  flex-direction: row;
+  
+}
+.border{
+  padding-right:20rpx;
+}
+.labelses{
+  background-color:#f8b71f;
+  color:white;
+  padding:10rpx;
+  border-radius: 40rpx;
+}

@@ -1,0 +1,151 @@
+/* pages/upload/upload.wxss */
+.all{
+  width:95%;
+  margin:auto;
+}
+.img{
+  display: inline-block;
+}
+ 
+.pic {
+float:left;
+position:relative;
+margin-right:9px;
+margin-bottom:9px;
+}
+.delete-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+ 
+.weui-uploader{
+  padding: 10rpx;
+}
+ 
+ 
+.lineHeight {
+  width: 100%;
+  height:90rpx;
+  line-height: 110rpx;
+  border-bottom: 1px solid #ccc;
+  color:#666666;
+  font-size:14px;
+}
+.state{
+  display:flex;
+  flex-direction: row;
+  line-height: 110rpx;
+}
+.container {
+  padding: 0;
+  align-items: left;
+  padding-left: 15rpx;
+}
+.numberInfo {
+  font-size: 24rpx;
+  text-indent: 15rpx;
+  border-bottom: 1px solid #ccc;
+}
+ 
+/* .input {
+  display: inline-block;
+  border: 1px solid #ccc;
+  line-height: 80rpx;
+  vertical-align: middle;
+  margin-left: 11%;
+  width: 75%;
+} */
+.input,
+.input-7 ,
+.input-15{
+  margin-left: 7%;
+  display: inline-block;
+  /* border: 1px solid #ccc; */
+  line-height: 80rpx;
+  vertical-align: middle;
+  width: 75%;
+  color:#333333;
+}
+.input{
+  margin-left: 11%;
+}
+ 
+button {
+  width: 480rpx;
+  height:80rpx;
+  margin:auto;
+  position:relative;
+  bottom:-180rpx;
+  font-size:40rpx;
+  line-height: 80rpx;
+  background-color:#f8b71f;
+  color:white;
+}
+.select{
+  margin-left: 7%;
+  color: #666;
+}
+ 
+.input-15{
+  margin-left:15%;
+}
+.image{
+  width:223rpx;
+  height:223rpx;
+  float:left;
+}
+.picture {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.picture .left {
+  /* width: 100rpx; */
+  font-size: 14px;
+  color:#666666;
+  /* float: left; */
+  padding-top: 20rpx;
+}
+.picture .right {
+  /* width: 610rpx; */
+  font-size: 24rpx;
+  /* float: left; */
+  color: #888;
+  box-sizing: border-box;
+  padding-top:36rpx; 
+}
+.picture .right .add {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 10rpx;
+}
+.According{
+  width:120rpx;
+  height:120rpx;
+  float:left;
+  margin-right:10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 60rpx;
+}
+.parcel{
+ width:120rpx;
+  height:120rpx;
+  float:left;
+  margin-right:10rpx;
+   margin-bottom: 10rpx;
+  position: relative;
+}
+.deleteimg{
+  width:30rpx;
+  height:30rpx;
+  position: absolute;
+  right:0;
+  top:0;
+  z-index: 2;
+}

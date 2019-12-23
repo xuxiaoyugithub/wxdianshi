@@ -1,0 +1,102 @@
+<block wx:if="{{hiden == 1}}">
+<view class="all">
+  <view class="top">
+    <!-- <view class="sign"> -->
+    <view class="back" style="background-image:url('{{sign == 0 ? wsign : ysign}}')" animation="{{ani}}" bind:touchend="{{sign == 0 ? 'sign' : ''}}" bind:touchstart="{{sign == 0 ? 'nanTwo' : ''}}">
+      <view class="qd">{{text}}</view>
+      <view class="lx">连续{{series}}天</view>
+    </view>
+    
+    <!-- </view> -->
+    <view class="integral">
+      <image src="../../../images/jf.png"></image>
+      <view>积分</view>
+    </view>
+    
+    <view class="btm">
+      <view class="one">
+        <!-- <view class="day"> -->
+          <view class="quan" style="background:{{series >= 1 ? '#ffa7d2' : '#F5A62A'}}"></view>
+          <!-- <view>一天</view> -->
+        <!-- </view> -->
+        
+        <view class="ju"></view>
+      </view>
+      <view class="one">
+        <view class="quan" style="background:{{series >= 2 ? '#a7b1ff' : '#F5A62A'}}"></view>
+        <view class="ju"></view>
+      </view>
+      <view class="one">
+        <view class="quan" style="background:{{series >= 3 ? '#6288e7' : '#F5A62A'}}"></view>
+        <view class="ju"></view>
+      </view>
+      <view class="one">
+        <view class="quan" style="background:{{series >= 4 ? '#45b3ba' : '#F5A62A'}}"></view>
+        <view class="ju"></view>
+      </view>
+      <view class="one">
+        <view class="quan" style="background:{{series >= 5 ? '#d2f224' : '#F5A62A'}}"></view>
+        <view class="ju"></view>
+      </view>
+      <view class="one">
+        <view class="quan" style="background:{{series >= 6 ? '#f36512' : '#F5A62A'}}"></view>
+        <view class="ju"></view>
+      </view>
+      <view class="one">
+        <view class="quan" style="background:{{series >= 7 ? '#de2d2d' : '#F5A62A'}}"></view>
+        <view class="ju"></view>
+      </view>
+    </view>
+    <view class="day">
+      <view>1天</view>
+      <view>2天</view>
+      <view>3天</view>
+      <view>4天</view>
+      <view>5天</view>
+      <view>6天</view>
+      <view>7天</view>
+    </view>
+    <view class="lws">
+      <image src="../../../images/lw.png" class="lw"></image>
+    </view>
+  </view>
+  
+
+</view>
+<!-- 日历年月 -->
+<view class='calendar_title flex_nowrap'>
+  <view class='icon' bindtap='lastMonth'>
+    <image src='../../../images/lrs.png' />
+  </view>
+  <view>{{year}}年{{month}}月</view>
+  <view class='icon' bindtap='nextMonth'>
+    <image src='../../../images/lr.png' />
+  </view>
+</view>
+
+<!-- 日历主体 -->
+<view class='calendar'>
+  <view class='header'>
+    <view wx:for='{{date}}' wx:key='' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}
+      <view></view>
+    </view>
+  </view>
+
+  <view class='date-box'>
+    <block wx:for='{{dateArr}}' wx:key=''>
+      <view class='{{isToday == item.isToday ? "nowDay" : ""}}'>
+      <!-- <view class='{{sign === 123 ? "nowDay" : ""}}'> -->
+        <view class='date-head' bindtap='lookHuoDong' data-year='{{year}}' data-month='{{month}}' data-datenum='{{item.dateNum}}'>
+          <view>{{item.dateNum}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>
+</block>
+<block wx:if="{{hiden == 0}}">
+  <view class="jzs">
+    <image class="jz actives" src="../../../images/zzz.png"></image>
+  </view>
+</block>

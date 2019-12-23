@@ -1,0 +1,51 @@
+
+<!--下拉框-->
+<view class='top'>
+  <view class='top-text'> 选择类别</view>
+  <!-- 下拉框 -->
+  <view class='top-selected' bindtap='bindShowMsgs'>
+    <text>{{grade_names}}</text>
+    <!-- <image src='/images/xia.png'></image> -->
+  </view>
+  <!-- 下拉需要显示的列表 -->
+  <view class="select_box" wx:if="{{selects}}">
+    <view wx:for="{{gradess}}" wx:key="unique">
+      <block wx:if="{{item.id != 1}}">
+        <view class="select_one" bindtap="mySelects" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+      </block>
+    </view>
+  </view>
+</view>
+<!---->
+<view class="service">
+  <!--评分-->
+  <view class='score'>
+    <view class='left'>
+      标题
+    </view>
+    <view class='right'>
+      <input class="star" type="text" bindinput="input" name="title"></input>
+    </view>
+  </view>
+  <!--图片-->
+  <view class='picture'>
+    <view class='left'>
+      图片
+    </view>
+    <view class='right'>
+       <view class="parcel" wx:for="{{pics}}" wx:key="{{index}}">
+       <image src="{{pics[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+       <image src="../../../images/bb.jpg" class='deleteimg' catchtap="deleteImg" data-index="{{index}}"></image>
+       </view>
+      <image src='../../../images/www.png' class='add' bindtap='choose'></image>
+    </view>
+  </view>
+</view>
+<!--textarea-->
+<view class="conts">
+    <textarea class="areas" placeholder='更多内容请写在这里（最多300字）' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs"> 
+        <!-- <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text> -->
+    </textarea>
+</view>
+<!--提交评价-->
+<button class='btn' bindtap="submit">发布</button>

@@ -1,0 +1,135 @@
+<!-- <view>
+  <image style="width:100%;" src="{{res.images}}"></image>
+</view> -->
+<block wx:if="{{hiden != 0}}">
+<swiper style='height:500rpx;width:100%;' indicator-dots="true" autoplay="true">
+  <swiper-item class="bg-green" wx:for="{{res.images}}">
+    <image bindtap="bindViewTap" style="width:100%;height:500rpx;" class="userinfo-avatar" src="{{item}}" mode="cover"></image>
+  </swiper-item>
+</swiper>
+<view class="all">
+<view class="title" style="font-size:20px;">
+  {{res.title}}
+</view>
+<view class="user">
+  <navigator url="../userdetail/userdetail?uid={{res.uid}}">
+    <image class="photo" src="{{res.avatarurl}}"></image>
+  </navigator>
+  <view class="name">{{res.nickname}}</view>
+  <view class="time">{{res.created_at}}</view>
+</view>
+<view class="content" style="font-size:20px;">
+  {{res.content}}
+</view>
+<view class="bom">
+  <view >
+    <button class="zhuan" open-type="share" data-title="{{res.title}}" id="{{res.id}}">
+    <image style="width:45rpx;height:45rpx;margin-top:20rpx;margin-bottom:10rpx;" src="../../images/sss.jpg"></image>
+    </button>
+  </view>
+  <view class="pl" bindtap='focusButn' data-nickname="{{res.nickname}}">
+    <image style="width:50rpx;height:50rpx;" src="../../images/uuu.png"></image>
+    <view>{{plnum}}</view>
+  </view>
+  <block wx:if="{{!isLike}}">
+    <view class="likes" bindtap="{{uid != 0 ? 'likes' : 'jump'}}">
+      <image style="width:45rpx;height:45rpx;" src="../../images/qqq.jpg"></image>
+      <view>{{likes}}</view>
+    </view>
+  </block>
+  <block wx:if="{{isLike}}">
+    <view class="likes" bindtap="cancleLike">
+      <image style="width:45rpx;height:45rpx;" src="../../images/cc.jpg"></image>
+      <view>{{likes}}</view>
+    </view>
+  </block>
+  <block wx:if="{{res.uid == uid}}">
+    <view class="pl" bindtap='del' data-id="{{res.id}}">
+      <image style="width:50rpx;height:50rpx;" src="../../images/dd.jpg"></image>
+    </view>
+  </block>
+</view>
+</view>
+<button class="share" bindtap="share" data-url="pages/share/share?id={{res.id}}">分享朋友圈</button>
+
+<!--所有评论-->
+<block wx:for="{{message}}">
+  <view class="fg">
+  <view class="message">
+    <view class="users">
+      <navigator url="../userdetail/userdetail?uid={{item.uid}}">
+        <image src="{{item.avatarurl}}"></image>
+      </navigator>
+      <view class="nickname">{{item.nickname}}</view>
+    </view>
+    <view class="contents">
+      <view>{{item.content}}</view>
+      <view class="btm">
+        <view>{{item.created_at}}</view>
+        <block wx:if="{{item.uid != uid && uid != 0}}">
+          <view style="margin-left:20rpx;" bindtap='focusButn' data-uid="{{item.uid}}" data-nickname="{{item.nickname}}" data-id="{{item.id}}">回复</view>
+        </block>
+        <block wx:if="{{item.uid == uid}}">
+          <view style="margin-left:20rpx;" bindtap='delMessage' data-id="{{item.id}}" data-index="{{index}}">删除</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{reply}}" wx:for-item="reply">
+    <view class="messages" wx:if="{{reply.mid == item.id}}">
+      <view class="users">
+        <navigator url="../userdetail/userdetail?uid={{reply.uid}}">
+          <image src="{{reply.avatarurl}}"></image>
+        </navigator>
+        <view class="nickname">{{reply.nickname}}</view>
+        <view>回复</view>
+        <navigator url="../userdetail/userdetail?uid={{reply.rid}}">
+          <image src="{{reply.ravatarurl}}"></image>
+        </navigator>
+        <view class="nickname">{{reply.rnickname}}</view>
+      </view>
+      <view class="contents">
+        <view>{{reply.content}}</view>
+        <view class="btm">
+          <view>{{reply.created_at}}</view>
+          <block wx:if="{{reply.uid != uid && uid != 0}}">
+            <view style="margin-left:20rpx;" bindtap='focusButn' data-reid="{{reply.id}}" data-uid="{{reply.uid}}" data-id="{{item.id}}" data-nickname="{{reply.nickname}}">回复</view>
+          </block>
+        <block wx:if="{{reply.uid == uid}}">
+          <view style="margin-left:20rpx;" bindtap='delReply' data-id="{{reply.id}}" data-index="{{index}}">删除</view>
+        </block>
+        </view>
+      </view>
+    </view>
+  </block>
+  </view>
+</block>
+<!--评论框-->
+<!--登录后显示-->
+<block wx:if="{{uid != 0}}">
+<form bindsubmit="{{rid == 0 ? 'inputBlur' : 'reply'}}">
+<view class='commentInputView' style='bottom:{{height == ""?0:height}}px;' hidden='{{!isInput}}'>
+ 
+  <view  class='commentInput'>
+    <input class='input' maxlength='-1' data-value="{{value}}" bindfocus="inputFocus" focus='{{focusInput}}' bindblur="blur" name="content" placeholder="{{tips}}"></input>
+  </view>
+  <button class='send' formType="submit">发送</button>
+</view>
+</form>
+</block>
+<!--未登录显示-->
+<block wx:if="{{uid == 0}}">
+<view class='commentInputView' style='bottom:{{height == ""?0:height}}px;' hidden='{{!isInput}}'>
+ 
+  <view  class='commentInput'>
+    <input class='input' maxlength='-1' bindfocus="inputFocus" focus='{{focusInput}}' bindblur="login"></input>
+  </view>
+  <button class='send' bindtap="logins">登陆?</button>
+</view>
+</block>
+</block>
+<block wx:if="{{hiden == 0}}">
+  <view class="jzs">
+    <image class="jz actives" src="../../images/zzz.png"></image>
+  </view>
+</block>

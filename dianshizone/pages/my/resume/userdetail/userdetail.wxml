@@ -1,0 +1,45 @@
+<view class="all">
+ <form bindsubmit="formSubmit">
+  
+  <!--图片-->
+  <view class='picture'>
+    <view class='left'>
+      形象
+    </view>
+    <view class='right'>
+       <view class="parcel" wx:for="{{pics}}" wx:key="{{index}}">
+       <image class="photo" src="{{pics[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+       <image src="../../../../images/bb.jpg" class='deleteimg' catchtap="deleteImg" data-index="{{index}}"></image>
+       </view>
+      <image src='../../../../images/www.png' class='add' bindtap='choose'></image>
+    </view>
+  </view>
+
+  <view class="lineHeight" type="text">姓名
+     <input class='input' value="{{res.realname}}" name="realname" placeholder='学历状态'></input>
+  </view>
+  <view class="lineHeight" type="number">学校
+     <input class='input' value="{{res.school}}" name="school" placeholder='请输入学校'></input>
+  </view>
+  <view class="lineHeight" type="number">年龄
+     <input class='input' value="{{res.age}}" name="age" placeholder='请输入年龄'></input>
+  </view>
+  <view class="lineHeight" type="text">专业
+     <input class='input' value="{{res.major}}" name="major" placeholder='专业'></input>
+  </view>
+  <view class="lineHeight" type="text">学历
+    <picker class="input" bindchange="changeMultiPicker" mode = "multiSelector" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="tui-picker-detail">
+    {{multiArray[0][multiIndex[0]]}} / {{multiArray[1][multiIndex[1]]}}
+    </view>
+    </picker>
+  </view>
+  <view class="lineHeight state" type="text">状态
+     <picker class="input" style="line-height:110rpx;" bindchange="changeCountry" value="{{countryIndex}}" range="{{countryList}}">
+      <view class="tui-picker-detail">{{countryList[countryIndex]}}</view>
+     </picker>
+  </view>
+
+  <button formType="submit">保存</button>
+  </form>
+</view>

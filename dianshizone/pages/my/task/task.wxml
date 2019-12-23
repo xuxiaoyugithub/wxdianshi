@@ -1,0 +1,28 @@
+<!-- <block wx:for="{{list}}">
+  <navigator url="../candidate/candidate?id={{item.id}}">
+    <view class="task">
+      <view class="title">{{item.title}}</view>
+      <view class="time">发布时间: {{item.created_at}}</view>
+      <view class="place">工作地点: {{item.place}}</view>
+    </view>
+    <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+  </navigator>
+</block> -->
+<!-- <view class="container"> -->
+ <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{list}}" wx:key="">
+  <navigator style="width:100%;" url="../candidate/candidate?id={{item.id}}">
+    <view class="content">
+      <view>{{item.title}}</view>
+      <view>发布时间: {{item.created_at}}</view>
+      <view>工作地点: {{item.place}}</view>
+    </view>
+  </navigator>
+  <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+ </view>
+<!-- </view> -->
+<block wx:if="{{list.length == 0}}">
+  <view class="wdl">
+    <image class="img" src="../../../images/kb.png"></image>
+    <view style="padding:60rpx;">您还没有发布哦~</view>
+  </view>
+</block>

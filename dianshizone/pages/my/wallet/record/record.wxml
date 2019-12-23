@@ -1,0 +1,20 @@
+<block wx:for="{{record}}">
+  <navigator url="./corddetail/corddetail?id={{item.id}}">
+    <view class="all" bindlongtap="longTap" data-id="{{item.id}}">
+      <view class="top">
+        <view class="top-left">{{item.content}}</view>
+        <view class="top-right">{{item.status == 1 ? '+' : '-'}}{{item.money}}</view>
+      </view>
+      <view class="btm">
+        <view class="btm-left">{{item.created_at}}</view>
+        <view class="btm-right">余额: {{item.balance}}</view>
+      </view>
+    </view>
+  </navigator>
+</block>
+<!--遮罩层-->
+<!-- <block wx:if="{{hide != 0}}">
+  <view class="hide">
+    <button class="">删除</button>
+  </view>
+</block> -->

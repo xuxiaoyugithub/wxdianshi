@@ -1,0 +1,42 @@
+<view class="all">
+<view class="alls">
+<form bindsubmit="formSubmit">
+  <view class="lineHeight" type="text">学校:
+     <input class='input-7' name="school" placeholder='学校名称'></input>
+  </view>
+
+  <view class="lineHeight" type="text">学历
+    <picker class="input-7" bindchange="changeMultiPicker" mode = "multiSelector" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="tui-picker-detail">
+      {{multiArray[0][multiIndex[0]]}} / {{multiArray[1][multiIndex[1]]}}
+      </view>
+    </picker>
+  </view>
+  <view class="lineHeight" type="number">专业:
+     <input class='input-7' name="major" placeholder='专业'></input>
+  </view>
+
+  <view class="lineHeight sse" type="number">在校时间:
+    <view class="se">
+      <picker class="time" mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+        <input name="start_time" disabled="true" value="{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}}">
+        </input>
+      </picker>
+      <view>---</view>
+      <picker class="time" mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+      <input name="end_time" disabled="true" value="{{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}}"></input>
+
+      </picker>
+    </view>
+  </view>
+
+  <view class="lineHeight ms" type="text"><view>在校经历:</view>
+     <textarea class='input-7' name="after" placeholder='在校经历'></textarea>
+  </view>
+  
+  <view class="btns">
+    <button formType="submit" class="btn">保存</button>
+  </view>
+  </form>
+</view>
+</view>

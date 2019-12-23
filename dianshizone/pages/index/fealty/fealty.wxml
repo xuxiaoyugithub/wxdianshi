@@ -1,0 +1,70 @@
+<view class="all">
+  <view class="top">点识空间为个人工作者建立
+    <text class="yellow">“动态技能简历”</text>,
+    以能力论英雄,让天下没有怀才不遇。
+  </view>
+  <view class="mobie">
+    <view class="moble">
+      <view class="m_top">
+        <view class="list">
+          <view class="title">
+            0押金
+          </view>
+          <text class="content">
+            平台不抽取您的提成，全面监管您的酬劳问题。
+          </text>
+        </view>
+        <view class="list">
+          <view class="list">
+          <view class="title">
+            企业认证
+          </view>
+          <text class="content">
+            平台企业安全任务实在。
+          </text>
+        </view>
+        </view>
+        <view class="list">
+          <view class="list">
+          <view class="title">
+            反馈系统
+          </view>
+          <text class="content">
+            企业反馈，能力透明。
+          </text>
+        </view>
+        </view>
+      </view>
+      <view class="m_btm">
+        <view class="text">
+          <image src="../../../images/gg.png"></image>
+          <view class="m_right">
+            <text>已经有20000名工作者加入点识空间</text>
+            <text>
+              有的通过点识转到了人生的第一桶金,有的开阔了视野，接触了更多的人
+            </text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="b_btm">
+      <view class="b_top">
+        <view class="dian"></view>
+        <view class="titles">酬劳保障</view>
+      </view>
+      <view class="contents">
+        平台这边会监管客户预付的项目款,进行税收合理优化,您这边完成任务后就会一次性收到全部酬劳。
+      </view>
+      <view class="bb"></view>
+      <view class="b_top">
+        <view class="dian"></view>
+        <view class="titles">酬劳保障</view>
+      </view>
+      <view class="contents">
+        平台这边会监管客户预付的项目款,进行税收合理优化,您这边完成任务后就会一次性收到全部酬劳。
+      </view>
+    </view>
+  </view>
+</view>

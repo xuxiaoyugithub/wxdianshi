@@ -1,0 +1,122 @@
+<view class="b1 float">
+  <view class="head">
+    <block wx:if="{{uid != 0}}">
+      <navigator url="../userdetail/userdetail?uid={{uid}}">
+        <view class="avatar">
+          <image class="avatar" src="{{avatarurl}}"></image>
+        </view>
+      </navigator>
+    </block>
+    <block wx:if="{{uid == 0}}">
+      <open-data class="avatar" type="userAvatarUrl"></open-data>
+    </block>
+    <block wx:if="{{uid == 0}}">
+      <open-data class="nick" type="userNickName"></open-data>
+    </block>
+    <block wx:if="{{uid != 0}}">
+      <view class="nick">{{nickname}}</view>
+    </block>
+    <block wx:if="{{uid != 0}}">
+      <view class="member">开通会员</view>
+    </block>
+  </view>
+  <view class="top_btm">
+    <view class="num">
+      <view class="nums">{{credit}}</view>
+      <view class="names">信用分</view>
+    </view>
+    <view class="num">
+      <view class="nums">{{integral}}</view>
+      <view class="names">积分</view>
+    </view>
+    <view class="num">
+      <view class="nums">{{series}}</view>
+      <view class="names">签到</view>
+    </view>
+  </view>
+  <!-- <view class="name float">
+    <block wx:if="{{uid == 0}}">
+      <open-data style="display:flex;align-items:center;" type="userNickName"></open-data>
+    </block>
+    <block wx:if="{{uid != 0}}">
+      <view>{{nickname}}</view>
+    </block>
+    <view wx:if="{{uid != 0}}" class="bottom">
+      <view class="btm">
+        <view>{{scount}}</view>
+        <view>文章</view>
+      </view>
+      <view class="btm">
+        <view>{{follow}}</view>
+        <view>关注</view>
+      </view>
+      <view class="btm">
+        <view>{{fans}}</view>
+        <view>粉丝</view>
+      </view>
+    </view>
+    <block wx:if="{{uid != 0}}">
+      <view wx:if="{{state != 3}}" class="bottom">
+        <view class="btm">
+          展示自己
+        </view>
+        <view class="btm">
+          <switch style="height:20rpx;" checked="{{state == 1}}" bindchange="switchChange"></switch>
+        </view>
+      </view>
+    </block>
+  </view> -->
+</view>
+<view class="all">
+<block wx:for="{{userListInfo}}">
+  <navigator url="{{uid == 0 ? '' : item.url}}" catchtap="jump" data-text="{{item.text}}">
+  <view class="b2">
+    <view class="left">
+      <view class="b3">
+        <image src="{{item.icon}}"></image>
+      </view>
+      <view class="b4">
+        <view>{{item.text}}</view>
+      </view>
+    </view>
+    
+    <view class="listimage" style="background-image:url('https://dianshi.ait114.com/think-5.0.7/public/static/jt.png')"></view>
+  </view>
+  </navigator>
+</block>
+<block wx:if="{{uid == 0}}">
+<view style="width:100%;">
+<navigator url="../login/login">
+  <view class="b2">
+    <view class="left">
+      <view class="b3">
+        <image src="../../images/qianbao.png"></image>
+      </view>
+      <view class="b4">
+        <view>微信授权登录</view>
+      </view>
+    </view>
+    
+    <view class="listimage" style="background-image:url('https://dianshi.ait114.com/think-5.0.7/public/static/jt.png')"></view>
+  </view>
+  </navigator>
+</view>
+</block>
+</view>
+<!-- <block wx:if="{{uid == 0}}">
+<view style="width:100%;">
+<navigator url="../login/login">
+  <view class="b2">
+    <view class="b3">
+      <image src="../../images/pj.png"></image>
+    </view>
+    <view class="b4">
+      
+        <view>微信授权登录</view>
+      
+    </view>
+    <view class="listimage" style="background-image:url()"></view>
+  </view>
+  </navigator>
+</view>
+</block> -->

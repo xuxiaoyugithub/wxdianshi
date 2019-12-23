@@ -1,0 +1,140 @@
+/**index.wxss**/
+page{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+}
+.nav {
+    height: 80rpx;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+    background: white;
+    font-size: 16px;
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.nav-item {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+.nav-item.active{
+    color: #f8b71f;
+}
+.tab-box{
+    width:100%;
+    background:white;
+    position:absolute;
+    padding-top: 80rpx;
+    top:0rpx;
+    height: 100%;
+    box-sizing: border-box;
+}
+.tab-content{
+    overflow-y: scroll;
+}
+.task{
+  width:90%;
+  height:200rpx;
+  margin:auto;
+  border-radius: 20rpx;
+  background-color:white;
+  margin-top:20rpx;
+  box-shadow: 0 0 0 2px rgba(153,153,153,0.1) ;
+}
+.top{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  padding:30rpx;
+}
+.left{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50rpx;
+}
+.left image{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50rpx;
+}
+.right{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left:30rpx;
+}
+.title{
+  font-size:16px;
+  padding-bottom:10rpx;
+}
+.time{
+  font-size:12px;
+  color:#666666;
+}
+.btm{
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  position:relative;
+  bottom:30rpx;
+}
+.state{
+  width:140rpx;
+  height:48rpx;
+  font-size:12px;
+  color:white;
+  background-color:#f8b71f;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-right:30rpx;
+  border-radius: 48rpx;
+}
+/* .title{
+  font-size:20px;
+  margin-left:30rpx;
+}
+.time{
+  font-size:15px;
+  margin-left:30rpx;
+  margin-top:30rpx;
+}
+.place{
+  font-size:15px;
+  margin-left:30rpx;
+  margin-top:20rpx;
+}
+.completion{
+  width:95%;
+  height:90rpx;
+  margin:auto;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#ccc;
+  line-height:40rpx;
+} */
+.wdl{
+  width:100%;
+  height:80vh;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.img{
+  width:260rpx;
+  height:240rpx;
+  padding:60rpx;
+}

@@ -1,0 +1,56 @@
+<block wx:if="{{hiden != 0}}">
+<view class="list-menu">
+ 
+<view class="navigator" bindtap='choose'>
+ 
+<view class="navigator-text"><text>头像</text></view>
+ 
+ 
+ 
+<view class="navigator-content-text" wx:if="{{myHeadImg!=null}}">
+ 
+<image mode="aspectFill" class="avatar" src="{{myHeadImg}}"></image>
+ 
+</view>
+ 
+<view class="navigator-content-text" wx:else>
+ 
+<image mode="aspectFill" class="avatar" src="{{avatarurl}}"></image>
+ 
+</view>
+ 
+<image class='charge-img' src='https://img.cdn.zhaoshang800.com/img/2018/04/11/broker/703218f3-2b76-473d-86a3-1bd901cc57af.png'></image>
+ 
+</view>
+ 
+<!-- <view wx:for="{{info_list}}" wx:key="{{id}}"> -->
+<form bindsubmit="submit">
+  <view class="navigator">
+  
+  <view class="navigator-text">昵称</view>
+  
+  <input class="navigator-content-text" name="nickname" value="{{nickname}}"></input>
+  
+  </view>
+
+  <view class="navigator">
+
+  <view class="navigator-text">年龄</view>
+  
+  <input class="navigator-content-text" name="age" value="{{age}}"></input>
+
+  </view>
+
+  <button class="btn" formType="submit">修改</button>
+</form>
+  <!-- </view> -->
+  
+  </view>
+  </block>
+<block wx:if="{{hiden == 0}}">
+  <view class="jzs">
+    <image class="jz" src="../../../images/ff.gif"></image>
+  </view>
+</block>
+
+

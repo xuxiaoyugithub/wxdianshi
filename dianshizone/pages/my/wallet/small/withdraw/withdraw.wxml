@@ -1,0 +1,12 @@
+<view class="all">
+  <form bindsubmit="submit">
+    <view>提现金额</view>
+    <view class="recharge">
+      <view>￥</view>
+      <input type="number" style="width:100%;height:100%;" name="money"></input>
+    </view>
+    <view class="btn">
+      <button class="chong" formType="submit">提现</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,45 @@
+<view class="container">
+    <!-- tab导航栏 -->
+    <!-- scroll-left属性可以控制滚动条位置 -->
+    <!-- scroll-with-animation滚动添加动画过渡 -->
+    <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+        <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+            <view class="nav-item {{currentTab == idx ?'active':''}}"  data-current="{{idx}}" bindtap="{{click ?'switchNav':''}}">{{navItem.text}}</view>
+        </block>        
+    </scroll-view>
+    <!-- 页面内容 -->
+    <swiper class="tab-box" current="{{currentTab}}" id="" duration="300" bindchange="switchTab">
+      <swiper-item wx:for="{{navData}}" wx:for-item="tabItem" wx:for-index="id" wx:key="id" class="tab-content">
+      <view></view>
+        <block wx:for="{{list}}">
+        <!-- <view style="height:800rpx;">打法大使馆对方和</view> -->
+          <view class="all">
+            <view class="user">
+              <image src="{{item.avatarurl}}"></image>
+              <view>{{item.nickname}}</view>
+              <view class="time">{{item.created_at}}</view>
+            </view>
+
+            <view class='right'>
+              <text bindtap='label' wx:for="{{item.label}}" wx:for-item="label" class="labelColor}}">{{label}}</text>
+              <!-- <text bindtap='label1' class="labelColor}}">用时时间短</text>
+              <text bindtap='label2' class="labelColor">效率高</text>
+              <text bindtap='label3' class="labelColor">门店环境好</text>
+              <text bindtap='label4' class="labelColor">很专业</text> -->
+            </view>
+
+            <view class="content">{{item.content}}</view>
+            <view class="img">
+              <view class="{{item.photo.length >= 3 ? 'image' : 'imgs'}}" wx:for="{{item.photo}}" wx:for-item="photo"><image class="photo" src="{{photo}}" data-src="{{photo}}"  data-list="{{item.photo}}" bindtap="previewImage"></image></view>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{list.length == 0}}">
+          <view class="wdl">
+            <image class="imgg" src="../../../images/kb.png"></image>
+            <view style="padding:60rpx;">暂无评价哦~</view>
+          </view>
+        </block>
+      </swiper-item>
+    </swiper>
+</view>

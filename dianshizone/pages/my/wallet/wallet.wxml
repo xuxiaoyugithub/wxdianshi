@@ -1,0 +1,45 @@
+<navigator url="./small/small">
+  <view class="top">
+    <view class="tops">
+      <view class="top_top">余额</view>
+      <view class="top_btm">￥{{balance}}</view>
+    </view>
+    <view class="tops">
+      <view class="top_top">可提现金额</view>
+      <view class="top_btm">￥{{balance}}</view>
+    </view>
+    <view class="tops">
+      <view class="top_top">积分</view>
+      <view class="top_btm">￥{{integral}}</view>
+    </view>
+  </view>
+</navigator>
+<view class="all">
+<block wx:for="{{userListInfo}}" wx:if="{{item.hidden}}">
+  <navigator url="{{item.url}}">
+  <view class="b2">
+    <view class="left">
+      <view class="b3">
+        <image src="{{item.icon}}"></image>
+      </view>
+      <view class="b4">
+        <view>{{item.text}}</view>
+      </view>
+    </view>
+    
+    <view class="listimage" style="background-image:url('https://dianshi.ait114.com/think-5.0.7/public/static/jt.png')"></view>
+  </view>
+  </navigator>
+</block>
+<!-- <navigator url="./small/small">
+  <view class="b2">
+    <view class="b3">
+      <image src="../../../images/gg.jpg"></image>
+    </view>
+    <view class="b4">
+      <view>设置支付密码</view>
+    </view>
+    <view class="listimage" style="background-image:url()">></view>
+  </view>
+  </navigator> -->
+</view>

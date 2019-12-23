@@ -1,0 +1,55 @@
+<view class="all">
+<view class="alls">
+<form bindsubmit="formSubmit">
+  <view class="lineHeight" type="number">名称:
+     <input class='input' name="project" placeholder='项目名称'></input>
+  </view>
+  <view class="lineHeight" type="number">职位:
+     <input class='input' name="role" placeholder='职位'></input>
+  </view>
+  <view class="lineHeight sse" type="number">开始时间:
+    <view class="se">
+      <picker class="time" mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+        <input name="start_time" disabled="true" value="{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}}">
+        </input>
+      </picker>
+      <view>---</view>
+      <picker class="time" mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+      <input name="end_time" disabled="true" value="{{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}}"></input>
+
+      </picker>
+    </view>
+    <!-- <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+      <input class="input" name="start_time" disabled="true" value="{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}}">
+      </input>
+    </picker> -->
+  </view>
+  <!-- <view class="lineHeight" type="number">结束时间: -->
+    <!-- <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+    <input class="input" name="end_time" disabled="true" value="{{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}}"></input>
+
+    </picker> -->
+  <!-- </view> -->
+  <view class="lineHeight ms" type="text"><view>项目描述:</view>
+     <textarea class='input-7' name="describe" placeholder='项目描述'></textarea>
+  </view>
+  <view class="lineHeight ms" type="text"><view>我的贡献:</view>
+     <textarea class='input-7' name="contribute" placeholder='我的贡献'></textarea>
+  </view>
+  <!--图片-->
+  <view class='picture'>
+    <view class='left'>
+      图片
+    </view>
+    <view class='right'>
+       <view class="parcel" wx:for="{{pics}}" wx:key="{{index}}">
+       <image src="{{pics[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+       <image src="../../../../images/bb.jpg" class='deleteimg' catchtap="deleteImg" data-index="{{index}}"></image>
+       </view>
+      <image src='../../../../images/addpic.png' class='add' bindtap='choose'></image>
+    </view>
+  </view>
+  <button formType="submit" class="btn">保存</button>
+  </form>
+</view>
+</view>

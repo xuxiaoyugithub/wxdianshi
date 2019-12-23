@@ -1,0 +1,139 @@
+.all{
+  width:100%;
+}
+.top{
+  width:100%;
+  height:420rpx;
+  background:linear-gradient(to right,#F8E380,#f8b71f);
+  display:flex;
+  position:relative;
+}
+.back{
+  width:180rpx;
+  height:180rpx;
+  background-image: url('https://dianshi.ait114.com/think-5.0.7/public/static/wq.png');
+  background-size:180rpx 180rpx;
+  margin: auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top:80rpx;
+}
+.qd{
+  font-size:17px;
+  color:#f8b71f;
+  padding:10rpx;
+}
+.lx{
+  font-size:12px;
+  color:#f8b71f;
+  padding:10rpx;
+}
+.integral{
+  position:absolute;
+  right:0rpx;
+  top:70rpx;
+  width:120rpx;
+  height:60rpx;
+  border-left:2px solid #ff9933;
+  border-top:2px solid #ff9933;
+  border-bottom:2px solid #ff9933;
+  border-radius: 60rpx 0rpx 0rpx 60rpx;
+  background-color:white;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size:13px;
+  color:#f8b71f;
+}
+.integral image{
+  width:50rpx;
+  height:50rpx;
+}
+.btm{
+  width:100%;
+  margin:auto;
+  position:absolute;
+  bottom:50rpx;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.one{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.quan{
+  width:25rpx;
+  height:25rpx;
+  background: #F5A62A;
+  border-radius: 20rpx;
+  box-shadow: 0 0 0 5rpx rgba(255,255,255,1);
+}
+.ju{
+  width:70rpx;
+  height:9rpx;
+  background:#F5A62A;
+  margin-left:5rpx;
+}
+.lws{
+  width:660rpx;
+  height:75rpx;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:flex-end;
+  position:absolute;
+  bottom: 80rpx;
+  margin-right:50rpx;
+}
+.lw{
+  width:60rpx;
+  height:65rpx;
+}
+.day{
+  width:91%;
+  margin:auto;
+  position:absolute;
+  bottom:25rpx;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size:10px;
+  color:white;
+}
+
+.calendar_title{width: 70%; margin: 10rpx auto;display:flex;align-items: center; justify-content: space-between;font-size: 15px;color: #f8b71f;}
+.calendar_title .icon image{width: 30rpx; height: 30rpx;margin: 5rpx auto;}
+
+/* 日历 */
+.calendar{width: 100%;background: #fff;border-bottom-right-radius: 20rpx;border-bottom-left-radius: 20rpx;padding: 0 0 20rpx;font-family: FZZhunYuan-M02S;}
+.header{font-size: 12px;width: 90%;margin: 0 auto;}
+.header>view{display: inline-block;width: 14.285%;color: #666;font-size: 30rpx;text-align: center;border-bottom: 1px solid #D0D0D0;padding: 20rpx 0;}
+.weekMark{position: relative;width: 80%;margin: 0 auto;}
+.weekMark view{position: absolute;bottom: 0;left: 0;width: 100%;border-bottom: 2px solid #f8b71f;}
+.date-box{font-size: 0;padding: 10rpx 0;width: 90%;margin: 0 auto;}
+.date-box>view{position: relative;display: inline-block;width: 14.285%;color: #666;text-align: center;vertical-align: middle;}
+.date-head{height: 60rpx;line-height: 60rpx;font-size: 14px;}
+.nowDay .date-head{width: 60rpx;border-radius: 50%;text-align: center;color: #fff;background: linear-gradient(to right,#F8E380,#f8b71f);margin: 0 auto;}
+
+ .jzs{
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content: center;        
+  align-items:center;
+ }
+ .jz{
+  width:100rpx;
+  height:100rpx;
+ }
+.actives {
+ animation: weuiLoading 1s steps(12, end) infinite;
+}

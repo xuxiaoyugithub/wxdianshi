@@ -1,0 +1,30 @@
+<!-- <view class="all">
+<view class="alls">
+<form bindsubmit="formSubmit">
+  <view class="lineHeight" type="text"><view>曾获荣誉:</view>
+     <textarea class='input-7' name="describe" value="{{res.content}}" placeholder='曾获荣誉'></textarea>
+  </view>
+
+  <button formType="submit" style="background:#179b16;">保存</button>
+  </form>
+</view>
+</view> -->
+<view class="all">
+<view class="alls">
+  <view class="title">曾获荣誉</view>
+  <view class="text">
+    <form bindsubmit="formSubmit">
+      <textarea placeholder="曾获荣誉"
+                placeholder-classs="texts"
+                placeholder-style="color:#333;"
+                maxlength="100"
+                auto-focus="true"
+                bindblur="changeContext"
+                name="content" value="{{res.content}}" style="width:100%;"></textarea>
+      <view class="btns">
+        <button formType="submit" class="btn">保存</button>
+      </view> 
+    </form>
+  </view>
+</view>
+</view>

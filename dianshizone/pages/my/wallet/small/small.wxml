@@ -1,0 +1,11 @@
+<view class="navigator">
+  <view class="small">
+    <image src="../../../../images/gg.jpg"></image>
+    <view class="mysmall">我的零钱</view>
+    <view class="money">￥{{balance}}</view>
+  </view>
+  <view class="btn">
+    <button class="chong" type='primary' bindtap='jump'>充值</button>
+    <button class="ti" bindtap='jumps'>提现</button>
+  </view>
+</view>

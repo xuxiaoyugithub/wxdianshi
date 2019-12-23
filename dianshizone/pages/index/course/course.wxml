@@ -1,0 +1,25 @@
+<view class="all">
+  <view class="alls">
+    <view class="ts">
+      <view class="one">1</view>
+      <view class="content">
+        <view class="title">完善信息</view>
+        <view class="xx">完善个人信息提交简历</view>
+      </view>
+    </view>
+    <view class="ts">
+      <view class="one">2</view>
+      <view class="content">
+        <view class="title">寻找合适项目</view>
+        <view class="xx">可以根据任务的酬劳以及工期,还有自己的情况选择是否申请任务,申请任务后,项目经理会与您对接,确定是否合作</view>
+      </view>
+    </view>
+    <view class="ts">
+      <view class="one">3</view>
+      <view class="content">
+        <view class="title">发挥您的才能完成项目</view>
+        <view class="xx">保障交付时间,重视精神契约可以快速积累您的信用值,获得更多的工作机会</view>
+      </view>
+    </view>
+  </view> 
+</view>

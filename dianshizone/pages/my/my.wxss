@@ -1,0 +1,165 @@
+page{
+  background-color:#F5F5F5;
+}
+
+.b1{
+  width:100%;
+  height:380rpx;
+  /* border:1px solid red; */
+  margin-bottom:40rpx;
+  background: linear-gradient(to right,#F8E380,#f8b71f);
+  border-style:6px solid #F5F5F5;
+}
+.all{
+  width:100%;
+  /* float:left; */
+  position:absolute;
+  top:480rpx;
+}
+.b2{
+  position:relative;
+  display:flex;
+  padding:15px;
+  align-items:center;
+  justify-content: space-between;
+  border-bottom:1px solid #F5F5F5;
+  background-color: white;
+  padding-top:20px;
+  margin-top:20rpx;
+}
+
+/* .head{
+  overflow:hidden;
+  border-radius:60%;
+  width:240rpx;
+  height:240rpx;
+  margin:16rpx 60rpx;
+  border:1px solid red;
+} */
+.head{
+  width:89%;
+  height:200rpx;
+  padding:40rpx;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.avatar{
+  width:170rpx;
+  height:170rpx;
+  border-radius:85rpx;
+}
+.nick{
+  margin-right:50rpx;
+  font-size:25px;
+  color:white;
+}
+.member{
+  width:150rpx;
+  /* height:40rpx; */
+  background: #f08c2c;
+  padding:10rpx;
+  /* padding-right:20rpx; */
+  color: white;
+  border-radius: 40rpx;
+  line-height:40rpx;
+  text-align: center;
+}
+.top_btm{
+  width:90%;
+  height:200rpx;
+  margin:auto;
+  background: white;
+  border-radius: 30rpx;
+  box-shadow:1rpx 1px 1px 1px rgba(252,220,66,0.2);
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.num{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.nums{
+  padding:10rpx;
+  font-size:25px;
+}
+.names{
+  padding:10rpx;
+}
+.name{
+  width:280rpx;
+  height:200rpx;
+  margin-top:20rpx;
+  font-size:56rpx;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.float{
+  float:left;
+}
+.left{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.listimage{
+  width:24rpx;
+  height:24rpx;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  color:#999999;
+}
+
+.b3{
+  display:inline-block;
+  width:20px;
+  margin-right:5px;
+}
+
+.b3 image{
+  width:100%;
+  height:20px;
+  vertical-align: -2px;
+}
+
+.b4{
+  display:inline-block;
+  font-size:14px;
+  color:black;
+}
+.bottom{
+  display:flex;
+  flex-direction: row;
+}
+.btm{
+  display:flex;
+  flex-direction: column;
+  font-size:14px;
+  padding:10rpx;
+  text-align: center;
+}
+/*swtich整体大小及背景色*/
+.wx-switch-input{
+    width:79rpx !important;
+    height:36rpx !important;
+    background: #50D2C2 !important;
+    border: #50d2c2 !important; /* 2018-07-18 重置开关边框颜色 */
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+    width:80rpx !important;
+    height: 36rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+    width: 40rpx !important;
+    height: 36rpx !important;
+}

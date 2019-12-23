@@ -1,0 +1,34 @@
+page{
+  background-color:#F8F8F8;
+}
+.all{
+  width:100%;
+  border-bottom:1px solid #ccc;
+  background-color:white;
+}
+.top{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-around; */
+  padding: 20rpx;
+}
+.top-right{
+  position:absolute;
+  right:20rpx;
+}
+.btm{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-around; */
+  padding: 20rpx;
+}
+.btm-left{
+  font-size:12px;
+}
+.btm-right{
+  position:absolute;
+  right:20rpx;
+  font-size: 12px;
+}

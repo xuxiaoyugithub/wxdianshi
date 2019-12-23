@@ -1,0 +1,29 @@
+<view class="all">
+  <view class="top">
+    <view style="font-size:16px;font-weight: bold;">我的标签</view>
+    <block wx:for="{{label}}">
+      <view class="labelColor">{{item.name}}</view>
+      <image bindtap="delLabel" data-index="{{index}}" class="img" src="../../../../images/del.png"></image>
+    </block>
+  </view>
+  <view class="btm">
+    <block wx:for="{{type}}">
+      <view class="type">
+        <view class="select" bindtap="downup" data-pid="{{item.id}}">
+          <view style="font-size:14px;color:#666666;">{{item.name}}</view>
+          <view class="pic"></view>
+        </view>
+        <block wx:if="{{pid == item.id && hide}}">
+          <view class="label">
+            <block wx:for="{{subtypes}}" wx:for-item="sub" wx:if="{{sub.pid == item.id}}">
+              <view bindtap="addLabel" data-id="{{sub.id}}" data-name="{{sub.name}}" class="labelColor">{{sub.name}}</view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+  <view class="btns">
+    <button class="btn" bindtap="upLabel">保存</button>
+  </view>
+</view>

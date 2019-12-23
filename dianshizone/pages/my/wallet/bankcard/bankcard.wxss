@@ -1,0 +1,30 @@
+.card{
+  display:flex;
+  flex-direction: row;
+  width: 90%;
+  margin:auto;
+  background-color:aqua;
+  padding:20rpx;
+  border-radius: 20rpx;
+  margin-top:25rpx;
+}
+.pic{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50rpx;
+}
+.pic image{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50rpx;
+}
+.add{
+  display:flex;
+  flex-direction: row;
+  /* position:relative; */
+  margin-top:30rpx;
+  width:95%;
+  margin:auto;
+  font-size:20px;
+  border-bottom:1px solid #F8F8F8;
+}

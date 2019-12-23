@@ -1,0 +1,110 @@
+.user{
+  display: flex;
+  height:200rpx;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  line-height: 200rpx;
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+.user image{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 60rpx;
+  /* margin-left:30rpx; */
+  transform: translate(20%,27%);
+}
+.name{
+  margin-left:30rpx;
+}
+.gz{
+  position:absolute;
+  right:2.5%;
+  font-size:18px;
+  color:red;
+}
+.middle{
+  width:100%;
+  height:120rpx;
+  border-bottom:1px solid #ccc;
+  margin-top:20rpx;
+}
+.num{
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.num1{
+  margin-right:200rpx;
+}
+.num3{
+  margin-left:200rpx;
+}
+.article{
+  width:90%;
+  margin:auto;
+  margin-top:20rpx;
+}
+.title{
+  float:left;
+}
+.time{
+  float:right;
+  font-size:13px;
+}
+.content{
+  float:left;
+  margin-top:20rpx;
+}
+.fg{
+  width:100%;
+  border-bottom:1px solid #ccc;
+  float:left;
+  margin-top:20rpx;
+}
+.users{
+  width:95%;
+  height:200rpx;
+  background-color:white;
+  display:flex;
+  flex-direction: row;
+  margin:auto;
+  border-radius: 20rpx;
+  margin-top:20rpx;
+  text-align:center;
+  align-items:center;
+  border:1px solid #ccc;
+  /* justify-content: center; */
+}
+.users image{
+  width:150rpx;
+  height:150rpx;
+  border-radius: 75rpx;
+}
+.dd{
+  height:80rpx;
+  position:absolute;
+  right:30rpx;
+  /* background-color:#F8F8F8; */
+  display:flex;
+  text-align:center;
+  align-items:center;
+  font-size:18px;
+  color:red;
+}
+ .jzs{
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content: center;        
+  align-items:center;
+ }
+ .jz{
+  width:100rpx;
+  height:100rpx;
+ }
+.actives {
+ animation: weuiLoading 1s steps(12, end) infinite;
+}

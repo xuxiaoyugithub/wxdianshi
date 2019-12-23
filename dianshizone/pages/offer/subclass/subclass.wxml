@@ -1,0 +1,99 @@
+<block wx:if="{{hiden != 0}}">
+<!--服务筛选-->
+<view class=" screen">
+  <view class="all">
+    <view class="fonts" style="color:{{sx1 != '全部岗位' ? '#f8b71f' : ''}}" bindtap='fabiao'>{{sx1}}
+      <image style="width:20rpx;height:20rpx;" src="../../../images/ll.jpg"></image>
+    </view>
+  </view>
+  <view class="new">
+    <view class="fonts" bindtap="time" style="color:{{time == 1 ? '#f8b71f' : ''}}" data-time="{{time}}">最新发布
+      <image style="width:20rpx;height:20rpx;" src="../../../images/ll.jpg"></image>
+    </view>
+  </view>
+  <!-- <view class="sx">
+    <view class="fonts">筛选</view>
+  </view> -->
+</view>
+<!---->
+<scroll-view style="height:{{height}}rpx;" scroll-y="true" bindscrolltolower="onPullDownRefresh" bindscrolltoupper="topLoad" bindscroll="scroll">
+<block wx:if="{{keys == 0}}" wx:for="{{lists}}">
+  <navigator url="../../part/part?id={{item.id}}">
+    <view class="bottom">
+        <view class="btm">
+            <view class="gz">{{item.title}}</view>
+            <view class="price">{{item.money}}</view>
+        </view>
+        <view class="rq">{{item.deadline}}</view>
+        <view class="dd">{{item.place}}</view>
+      </view>
+  </navigator>
+</block>
+
+<block wx:if="{{keys == 1}}" wx:for="{{personnel}}">
+  <navigator url="../../my/candidate/message/message?uid={{item.uid}}&offer=1">
+      <view class="bottoms">
+        <view class="btms">
+            <image class="avatar" src="{{item.avatarurl}}"></image>
+            <view class="gzs">{{item.nickname}}</view>
+            <view class="credit">{{item.credit}}</view>
+        </view>
+        <view class="label">
+          <block wx:for="{{item.label}}" wx:for-item="label">
+            <view class="dds">{{label}}</view>
+          </block>
+        </view>
+      </view>
+  </navigator>
+</block>
+<!--加载动画-->
+    <view class="loadmore" hidden="{{hide == 0}}" bindtap='clickLoadMore'>
+      <image hidden="{{hide == 0}}" class="icon actives" src='../../../images/zzz.png'/>
+      <text>努力加载中</text>
+    </view>
+</scroll-view>
+</block>
+
+<block wx:if="{{hiden == 0}}">
+  <view class="jzs">
+    <image class="jz actives" src="../../../images/zzz.png"></image>
+  </view>
+</block>
+<!--遮罩层-->
+  <view class='zhezhao' bindtap='laqi' hidden="{{flag}}">
+  <!--这是一个遮罩层，在框弹出后遮住框外区域-->
+  </view>
+  <!--这是下拉框中的内容，一个文本框和一个按钮，按钮触发拉起事件，表示拉起下拉框-->
+  <view class="test3 {{test=='test1'?'test1':'test2'}}" style='display:{{yesorno}};'>
+    <!-- <view class='input-content'>
+      <textarea class='ta' placeholder="元芳，有何要说的么？" auto-focus />
+    </view> -->
+    <view class=" screen">
+        <view class="all">
+          <view class="fonts" style="color:#f8b71f;background-color:#FFFFFF" bindtap='fabiao'>全部岗位</view>
+        </view>
+        <view class="new">
+          <view class="fonts" style="background-color:#FFFFFF">最新发布</view>
+        </view>
+        <!-- <view class="sx">
+          <view class="fonts" style="background-color:#FFFFFF">筛选</view>
+        </view> -->
+    </view>
+    <scroll-view scroll-y='true' style='height:89%;width:25%;'>
+      <view class="left" data-index="{{color}}" style="color:{{color == 0 ? '#f8b71f' : ''}}" bindtap="screen" data-id="0">全部类型</view>
+      <block wx:for="{{types}}" wx:for-item="types">
+        <view class="left" bindtap="screen" data-index="{{color}}" style="color:{{types.id == color ?'#f8b71f':''}}" data-id="{{types.id}}">{{types.name}}</view>
+        <!-- <view class="left">文员助理</view> -->
+      </block>
+    </scroll-view>
+    <scroll-view class="right" scroll-y='true'>
+      <block wx:for="{{type}}" wx:for-item="type">
+        <!-- <view style="font-size:13px;color:#ccc;">{{type.name}}</view> -->
+        <block wx:if="{{item.pid == type.id}}" wx:for="{{subtype}}">
+          <view class="class" bindtap="{{keys == 0 ? 'type' : 'types'}}" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+        </block>
+      </block>
+    </scroll-view>
+
+    <!-- <button class='btn' bindtap='laqi'>关闭</button> -->
+  </view>

@@ -1,0 +1,24 @@
+<scroll-view style="height:{{height}}rpx;" scroll-y="true" bindscrolltolower="onPullDownRefresh" bindscrolltoupper="topLoad" bindscroll="scroll"> 
+<view class="all">
+  <view class="demo" style="width:100%;height:100%">
+    <block wx:for="{{list}}">
+      <navigator url="../../part/part?id={{item.id}}">
+      <view class="bottom">
+        <view class="btm">
+            <view class="gz">{{item.title}}</view>
+            <view class="price">{{item.money}}</view>
+        </view>
+        <view class="rq">{{item.deadline}}</view>
+        <view class="dd">{{item.place}}</view>
+      </view>
+      </navigator>
+    </block>
+  </view>
+  <!--加载动画-->
+    <view class="loadmore" hidden="{{hide == 0}}" bindtap='clickLoadMore'>
+      <image hidden="{{hide == 0}}" class="icon actives" src='../../../images/zzzz.png'/>
+      <text>努力加载中</text>
+    </view>
+
+</view>
+</scroll-view>

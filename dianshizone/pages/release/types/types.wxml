@@ -1,0 +1,5 @@
+<block wx:for="{{types}}">
+  <!-- <navigator url="../subtypes/subtypes?id={{item.id}}"> -->
+  <view class="types" bindtap="jump" data-id="{{item.id}}">{{item.name}}</view>
+  <!-- </navigator> -->
+</block>

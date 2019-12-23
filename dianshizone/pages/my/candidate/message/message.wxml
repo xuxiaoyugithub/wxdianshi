@@ -1,0 +1,196 @@
+<!-- <view class="numberInfo">
+ ** 个人简历
+  <navigator style="position:absolute;right:0rpx;color:blue" url="../../evaluat/evaluat?uid={{id}}">查看个人评价</navigator>
+</view>
+<view class="container">
+ 
+  <view class="lineHeight" type="number">姓名
+     <input class='input' placeholder='请输入标题' disabled="true" value="{{detail.realname}}"></input>
+  </view>
+    <view class="lineHeight" type="text">年龄
+     <input class='input-15' placeholder='内容' disabled="true" value="{{detail.age}}"></input>
+  </view>
+  <view class="lineHeight" type="text">学校
+     <input class='input-7' placeholder='公司名称' disabled="true" value="{{detail.school}}"></input>
+  </view>
+  <view class="lineHeight" type="text">学历
+     <input class='input-7' placeholder='公司名称' disabled="true" value="{{detail.education}}"></input>
+  </view>
+  <view class="lineHeight">状态
+      <input class='input-7' type='number' placeholder='区号' disabled="true" value="{{detail.state}}"></input>
+  </view>
+  <view class="lineHeight" type='number'>个人优势
+      <textarea class='input-7' placeholder='公司分机号码（选填）' disabled="true" value="{{advantage.content}}"></textarea>
+  </view>
+  <view class="lineHeight" type="text" style="text-align:center;">项目经历
+     
+  </view>
+  <block wx:for="{{undergo}}">
+  <view class="lineHeight" type="text">项目名称
+     <input class='input-7' type='text' disabled="true" value="{{item.project}}"></input>
+  </view>
+  <view class="lineHeight" type="text">起止时间
+     <input class='input-7' type='text' disabled="true" value="{{item.start_time+'至'+item.end_time}}"></input>
+  </view>
+  <view class="lineHeight" type="text">项目描述
+      <textarea class='input-7' placeholder='公司分机号码（选填）' disabled="true" value="{{item.describe}}"></textarea>
+  </view> -->
+
+  <!--图片-->
+  <!-- <block wx:if="{{item.thumb != []}}">
+  <view class='picture'>
+    <view class='left'>
+      图片
+    </view>
+    <view class='right'>
+       <view class="parcel" wx:for="{{item.thumb}}" wx:for-item="thumb" wx:key="{{index}}">
+       <image src="{{thumb}}" class="According" data-index="{{index}}" data-arr="{{item.thumb}}" mode="aspectFill" bindtap="previewImg"></image>
+       </view>
+    </view>
+  </view>
+  </block>
+  </block>
+</view> -->
+<view class="b2">
+  <view class="left">
+    <view class="user">
+      <view>{{detail.realname}}</view>
+    </view>
+    <view class="btm">{{detail.state}}
+    <image class="dian" src="../../../../images/dian.png"></image>
+    {{detail.age}}岁
+    <image class="dian" src="../../../../images/dian.png"></image>
+    {{detail.education}}</view>
+  </view>
+  <view class="photo">
+    <navigator url="../../evaluat/evaluat?uid={{id}}">
+      <image src="{{detail.photo}}"></image>
+    </navigator>
+  </view>
+</view>
+<!--个人优势-->
+  <view class="b3">
+    <view class="top">
+      <view class="xm">个人介绍</view>
+    </view>
+    <block wx:if="{{!more1}}">
+      <view class="minfont">{{introduce}}</view>
+    </block>
+    <block wx:if="{{len1 > 40 && more1}}">
+      <view class="minfont">{{advantage.content}}</view>
+    </block>
+    <!-- <view class="minfont">{{advantage.content}}</view> -->
+    <block wx:if="{{len1>40}}">
+      <view class="more" bindtap="more1">
+        <view wx:if="{{!mores1}}">
+          更多
+          <image src="../../../../images/more.png"></image>
+        </view>
+        <view wx:if="{{mores1}}">
+          收起
+          <image src="../../../../images/mores.png"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+<!--项目经历-->
+  <view class="b3">
+    <view class="top">
+      <view class="xm">项目经历</view>
+    </view>
+    <block wx:if="{{!mores2}}">
+      <view class="top">
+        <view class="title">{{undergo[0].project}}</view>
+        <view class="time">{{undergo[0].start_time}}至{{undergo[0].end_time}} ></view>
+      </view>
+      <view class="label">{{undergo[0].role}}</view>
+      <view class="minfont">{{undergo[0].describe}}</view>
+    </block>
+    <block wx:for="{{undergo}}" wx:if="{{mores2}}">
+      <view class="top">
+        <view class="title">{{item.project}}</view>
+        <view class="time">{{item.start_time}}至{{item.end_time}} ></view>
+      </view>
+      <view class="label">{{item.role}}</view>
+      <view class="minfont">{{item.describe}}</view>
+    </block>
+    <block wx:if="{{undergo.length > 1}}">
+      <view class="more" bindtap="more2">
+        <view wx:if="{{!mores2}}">
+          更多
+          <image src="../../../../images/more.png"></image>
+        </view>
+        <view wx:if="{{mores2}}">
+          收起
+          <image src="../../../../images/mores.png"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+<!--教育经历-->
+  <view class="b3">
+    <view class="top">
+      <view class="xm">教育经历</view>
+    </view>
+    <block wx:if="{{!mores3}}">
+      <view class="top">
+        <view class="title">{{education[0].school}}</view>
+        <view class="time">{{education[0].start_time}}至{{education[0].end_time}} ></view>
+      </view>
+      <view class="minfont">{{education[0].major}}</view>
+    </block>
+    <block wx:for="{{education}}" wx:if="{{mores3}}">
+      <view class="top">
+        <view class="title">{{item.school}}</view>
+        <view class="time">{{item.start_time}}至{{item.end_time}} ></view>
+      </view>
+      <view class="minfont">{{item.major}}</view>
+    </block>
+    <block wx:if="{{education.length > 1}}">
+      <view class="more" bindtap="more3">
+        <view wx:if="{{!mores3}}">
+          更多
+          <image src="../../../../images/more.png"></image>
+        </view>
+        <view wx:if="{{mores3}}">
+          收起
+          <image src="../../../../images/mores.png"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+<!--曾获荣誉-->
+  <view class="b3">
+    <view class="top">
+      <view class="xm">曾获荣誉</view>
+    </view>
+    <block wx:if="{{!more4}}">
+      <view class="minfont">{{honor[0].content}}</view>
+      <view class="time">{{honor[0].created_at}}</view>
+    </block>
+    <block wx:for="{{honor}}" wx:if="{{more4}}">
+      <view style="padding-bottom:20rpx;">
+        <view class="minfont">{{item.content}}</view>
+        <view class="time">{{item.created_at}}</view>
+      </view>
+    </block>
+    <block wx:if="{{honor.length > 1}}">
+      <view class="more" bindtap="more4">
+        <view wx:if="{{!mores4}}">
+          更多
+          <image src="../../../../images/more.png"></image>
+        </view>
+        <view wx:if="{{mores4}}">
+          收起
+          <image src="../../../../images/mores.png"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+<block wx:if="{{offer == 0}}">
+ <view class="bottom">
+    <button class="btn" bindtap="agree">同意</button>
+    <button class="btn" bindtap="refuse">拒绝</button>
+ </view>
+</block>
+ 

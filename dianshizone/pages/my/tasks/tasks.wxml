@@ -1,0 +1,148 @@
+<view class="container">
+    <!-- tab导航栏 -->
+    <!-- scroll-left属性可以控制滚动条位置 -->
+    <!-- scroll-with-animation滚动添加动画过渡 -->
+    <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+        <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+            <view class="nav-item {{currentTab == idx ?'active':''}}"  data-current="{{idx}}" bindtap="{{click ?'switchNav':''}}">{{navItem.text}}</view>
+        </block>
+    </scroll-view>
+    <!-- 页面内容 -->
+    <swiper class="tab-box" current="{{currentTab}}" id="" duration="300" bindchange="switchTab">
+      <swiper-item wx:for="{{navData}}" wx:for-item="tabItem" wx:for-index="id" wx:key="id" class="tab-content">
+          <view></view>
+          <block wx:for="{{list}}">
+            <block wx:if="{{currentTab == 0}}">
+              <navigator url="../../part/part?id={{item.id}}">
+                <view class="task">
+                  <!-- <view class="title">{{item.title}}</view>
+                  <view class="time">发布时间: {{item.created_at}}</view>
+                  <view class="place">工作地点: {{item.place}}</view> -->
+                  <view class="top">
+                    <view class="left">
+                      <image src="{{item.avatarurl}}"></image>
+                    </view>
+                    <view class="right">
+                      <view class="title">{{item.title}}</view>
+                      <view class="time">{{item.created_at}}</view>
+                    </view>
+                  </view>
+                  <view class="btm">
+                    <view class="state">申请中</view>
+                  </view>
+                </view>
+              </navigator>
+            </block>
+            <block wx:if="{{currentTab == 1}}">
+              <navigator url="../../part/part?id={{item.id}}&status=2">
+                <view class="task">
+                  <!-- <view class="title">{{item.title}}</view>
+                  <view class="time">发布时间: {{item.created_at}}</view>
+                  <view class="place">工作地点: {{item.place}}</view> -->
+                  <view class="top">
+                    <view class="left">
+                      <image src="{{item.avatarurl}}"></image>
+                    </view>
+                    <view class="right">
+                      <view class="title">{{item.title}}</view>
+                      <view class="time">{{item.created_at}}</view>
+                    </view>
+                  </view>
+                  <view class="btm">
+                    <view class="state">申请中</view>
+                  </view>
+                </view>
+                
+              </navigator>
+            </block>
+            <block wx:if="{{currentTab == 2}}">
+              <navigator url="../../part/part?id={{item.id}}&status=5">
+                <view class="task">
+                  <!-- <view class="title">{{item.title}}</view>
+                  <view class="time">发布时间: {{item.created_at}}</view>
+                  <view class="place">工作地点: {{item.place}}</view> -->
+                  <view class="top">
+                    <view class="left">
+                      <image src="{{item.avatarurl}}"></image>
+                    </view>
+                    <view class="right">
+                      <view class="title">{{item.title}}</view>
+                      <view class="time">{{item.created_at}}</view>
+                    </view>
+                  </view>
+                  <view class="btm">
+                    <view class="state">申请中</view>
+                  </view>
+                </view>
+                
+              </navigator>
+            </block>
+            <block wx:if="{{currentTab == 3}}">
+              <navigator url="../../part/part?id={{item.id}}&status=3">
+                <view class="task">
+                  <!-- <view class="title">{{item.title}}</view>
+                  <view class="time">发布时间: {{item.created_at}}</view>
+                  <view class="place">工作地点: {{item.place}}</view> -->
+                  <view class="top">
+                    <view class="left">
+                      <image src="{{item.avatarurl}}"></image>
+                    </view>
+                    <view class="right">
+                      <view class="title">{{item.title}}</view>
+                      <view class="time">{{item.created_at}}</view>
+                    </view>
+                  </view>
+                  <view class="btm">
+                    <view class="state">申请中</view>
+                  </view>
+                </view>
+                
+              </navigator>
+              <block wx:if="{{item.completion == 1}}">
+                <view class="completion">等待发布者确认</view>
+              </block>
+              <block wx:if="{{item.completion == 2}}">
+                <view class="completion">已确认完成</view>
+              </block>
+              <block wx:if="{{item.completion == 3}}">
+                <view class="completion">发布者已拒绝完成</view>
+              </block>
+            </block>
+            <block wx:if="{{currentTab == 4}}">
+              <navigator url="../../part/part?id={{item.id}}&status=4">
+                <view class="task">
+                  <!-- <view class="title">{{item.title}}</view>
+                  <view class="time">发布时间: {{item.created_at}}</view>
+                  <view class="place">工作地点: {{item.place}}</view> -->
+                  <view class="top">
+                    <view class="left">
+                      <image src="{{item.avatarurl}}"></image>
+                    </view>
+                    <view class="right">
+                      <view class="title">{{item.title}}</view>
+                      <view class="time">{{item.created_at}}</view>
+                    </view>
+                  </view>
+                  <view class="btm">
+                    <view class="state">申请中</view>
+                  </view>
+                </view>
+                
+              </navigator>
+            </block>
+          </block>
+          <block wx:if="{{list.length == 0}}">
+            <view class="wdl">
+              <image class="img" src="../../../images/kb.png"></image>
+              <view style="padding:60rpx;">暂无任务哦~</view>
+            </view>
+          </block>
+        </swiper-item>
+    </swiper>
+</view>
+<!-- <block wx:if="{{list.length == 0}}">
+  <view class="wdl">
+    <image class="img" src="../../../images/kb.png"></image>
+    <view style="padding:60rpx;">您还没有发布哦~</view>
+  </view>
+</block> -->

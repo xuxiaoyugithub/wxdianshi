@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/text/text",
+    "pages/my/my",
+    "pages/offer/offer",
+    "pages/release/release",
+    "pages/my/resume/resume",
+    "pages/login/login",
+    "pages/my/resume/userdetail/userdetail",
+    "pages/release/types/types",
+    "pages/release/subtypes/subtypes",
+    "pages/offer/subclass/subclass",
+    "pages/space/space",
+    "pages/part/part",
+    "pages/userdetail/userdetail",
+    "pages/share/share",
+    "pages/index/issue/issue",
+    "pages/my/task/task",
+    "pages/my/candidate/candidate",
+    "pages/my/message/message"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "点识空间",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#666666",
+    "backgroundColor": "#F5F5F5",
+    "selectedColor": "#f8b71f",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/sheqv.png",
+        "selectedIconPath": "images/sheqv1.png",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/offer/offer",
+        "iconPath": "images/offer1.png",
+        "selectedIconPath": "images/offer.png",
+        "text": "任务"
+      },
+      {
+        "pagePath": "pages/text/text",
+        "iconPath": "images/xiaoxi.png",
+        "selectedIconPath": "images/xiaoxi1.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my1.png",
+        "text": "我的"
+      }
+      
+    ]
+  }
+}

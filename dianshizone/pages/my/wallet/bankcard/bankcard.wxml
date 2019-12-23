@@ -1,0 +1,19 @@
+<view class="all">
+<block wx:for="{{list}}">
+  <view class="card" bindlongtap="longTap" data-id="{{item.id}}">
+    <view class="pic">
+      <image src="../../../../images/ii.jpg"></image>
+    </view>
+    <view>
+      <view>{{item.type}}</view>
+      <!-- <view>储蓄卡</view> -->
+      <view>{{item.number}}</view>
+    </view>
+  </view>
+</block>
+  <!-- <navigator url="./addbank/addbank">
+    <view class="add">
+      <view>+ 添加银行卡</view> 
+    </view>
+  </navigator> -->
+</view>

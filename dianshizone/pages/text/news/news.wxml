@@ -1,0 +1,70 @@
+<view class="all">
+<!--点赞通知-->
+<block wx:if="{{type == 1}}">
+  <block wx:for="{{res}}">
+    <view class="likes">
+      <view class="user">
+        <image src="{{item.avatarurl}}"></image>
+        <view>{{item.nickname}}</view>
+      </view>
+      <navigator url="../../space/space?id={{item.sid}}">
+        <view class="btm">
+          <view class="content">{{item.content}}</view>
+          <view class="time">{{item.created_at}}</view>
+        </view>
+      </navigator>
+    </view>
+  </block>
+</block>
+<!--评论通知-->
+<block wx:if="{{type == 2}}">
+  <block wx:for="{{res}}">
+    <view class="likes">
+      <view class="user">
+        <image src="{{item.avatarurl}}"></image>
+        <view>{{item.nickname}}</view>
+      </view>
+      <navigator url="../../space/space?id={{item.sid}}">
+        <view class="btm">
+          <view class="content">{{item.content}}</view>
+          <view class="time">{{item.created_at}}</view>
+        </view>
+      </navigator>
+    </view>
+  </block>
+</block>
+<!--关注通知-->
+<block wx:if="{{type == 3}}">
+  <block wx:for="{{res}}">
+    <view class="likes">
+      <view class="user">
+        <image src="{{item.avatarurl}}"></image>
+        <view>{{item.nickname}}</view>
+      </view>
+      <navigator url="../../userdetail/userdetail?uid={{item.user}}">
+        <view class="btm">
+          <view class="content">{{item.content}}</view>
+          <view class="time">{{item.created_at}}</view>
+        </view>
+      </navigator>
+    </view>
+  </block>
+</block>
+<!--系统通知-->
+<block wx:if="{{type == 4}}">
+  <block wx:for="{{res}}">
+    <view class="likes">
+      <view class="user">
+        <image src="../../../images/aaa.jpg"></image>
+        <view>系统通知</view>
+      </view>
+      <!-- <navigator url="../../userdetail/userdetail?uid={{item.user}}"> -->
+        <view class="btm">
+          <view class="content">{{item.content}}</view>
+          <view class="time">{{item.created_at}}</view>
+        </view>
+      <!-- </navigator> -->
+    </view>
+  </block>
+</block>
+</view>

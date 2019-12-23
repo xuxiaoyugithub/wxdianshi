@@ -1,0 +1,34 @@
+.all{
+  width:90%;
+  margin:auto;
+}
+.top{
+  width:100%;
+  height: 250rpx;
+  border-bottom:1px solid #ccc;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sj{
+  padding:10rpx;
+}
+.money{
+  padding:10rpx;
+  font-size:20px;
+  font-weight: bolder;
+}
+.btm{
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  padding:20rpx;
+  font-size:13px;
+}
+.left{
+  color: #ccc;
+}
+.right{
+  margin-left:40rpx;
+}

@@ -1,0 +1,83 @@
+<!---->
+<form bindsubmit="submit">
+<view class="service">
+  <!--评分-->
+  <view class='score'>
+    <view class='left'>
+      真实姓名
+    </view>
+    <view class='right'>
+      <input class="star" type="text" name="realname"></input>
+    </view>
+  </view>
+  <view class='score'>
+    <view class='left'>
+      身份证号
+    </view>
+    <view class='right'>
+      <input class="star" type="number" name="idnumber"></input>
+    </view>
+  </view>
+  <view class='score'>
+    <view class='left'>
+      联系方式
+    </view>
+    <view class='right'>
+      <input class="star" type="number" name="contact"></input>
+    </view>
+  </view>
+  <!--图片-->
+  <view class='picture'>
+    <view class='left'>
+      身份证正面
+    </view>
+    <view class='right'>
+       <view class="parcel" wx:for="{{pics}}" wx:key="{{index}}">
+       <image src="{{pics[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+       <image src="../../../../images/bb.jpg" class='deleteimg' catchtap="deleteImg" data-index="{{index}}"></image>
+       </view>
+      <image src='../../../../images/www.png' class='add' bindtap='choose'></image>
+    </view>
+  </view>
+  <view class='picture'>
+    <view class='left'>
+      身份证反面
+    </view>
+    <view class='right'>
+       <view class="parcel" wx:for="{{back}}" wx:key="{{index}}">
+       <image src="{{back[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+       <image src="../../../../images/bb.jpg" class='deleteimg' catchtap="deleteImg" data-index="{{index}}"></image>
+       </view>
+      <image src='../../../../images/www.png' class='add' bindtap='back'></image>
+    </view>
+  </view>
+
+  <view class='score'>
+    <view class='left'>
+      银行卡号
+    </view>
+    <view class='right'>
+      <input class="star" type="number" name="number" value="{{userInputCardNum}}" bindinput="bankcardInput"></input>
+    </view>
+  </view>
+  <view class='score'>
+    <view class='left'>
+      类型
+    </view>
+    <view class='right'>
+      <input class="star" type="text" name="type" value="{{cardType}}" bindinput="bankcardTypeInput"></input>
+    </view>
+  </view>
+  <view class='score'>
+    <view class='left'>
+      预留手机号
+    </view>
+    <view class='right'>
+      <input class="star" type="text" name="phone"></input>
+    </view>
+  </view>
+</view>
+
+<!--提交评价-->
+<button class='btn' formType="submit">发布</button>
+</form>

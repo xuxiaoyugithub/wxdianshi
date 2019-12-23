@@ -1,0 +1,71 @@
+<block wx:if="{{login == 1}}">
+  <view class="all">
+    <form bindsubmit="formBindsubmit" bindreset="formReset">
+      <view class="inputs">
+        <view>类型</view>
+        <input class="input" disabled="true" bindtap="type" value="{{types}}" placeholder="类型"></input>
+        <input hidden="true" type="hidden" name="typesid" value="{{typesid}}"></input>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>任务名称</view>
+        <input class="input" type="text" name="title" placeholder="任务名称"></input>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="text">
+        <view class="texts">任务内容</view>
+        <textarea class="textarea" name="content" placeholder="任务内容"></textarea>
+      </view>
+      <view class="text">
+        <view class="texts">工作要求</view>
+        <textarea class="textarea" name="details" placeholder="工作要求"></textarea>
+      </view>
+      <view class="inputs1">
+        <view>基本薪资</view>
+        <input class="input" type="number" name="money" placeholder="基本薪资"></input>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="company">
+        <view class="{{index == 0 ? 'coms' : 'com'}}" bindtap="company" data-index="0">小时</view>
+        <view class="{{index == 1 ? 'coms' : 'com'}}" bindtap="company" data-index="1">天</view>
+        <view class="{{index == 2 ? 'coms' : 'com'}}" bindtap="company" data-index="2">月</view>
+        <view class="{{index == 3 ? 'coms' : 'com'}}" bindtap="company" data-index="3">次</view>
+      </view>
+      <view class="inputs">
+        <view>日期 (选填)</view>
+        <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+          <input class="input" disabled="true" name="deadline" value="{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}}" placeholder="日期"></input>
+        </picker>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>联系电话</view>
+        <input class="input" type="number" name="phone" placeholder="联系电话"></input>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>联系微信</view>
+        <input class="input" type="text" name="weixin" placeholder="联系微信"></input>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>地区 (选填)</view>
+        <picker style="width:70%;" mode="region" bindchange="bindRegionChange" value="{{detailed}}" custom-item="{{customItem}}" name="place">
+          <input  disabled="true" name="place" value="{{detailed}}" placeholder="地区"></input>
+        </picker>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="btn">
+        <button class="btns" formType="submit">发布</button>
+        <button class="btns" formType="reset">重置</button>
+      </view>
+    </form>
+  </view>
+</block>
+<block wx:if="{{login == 0}}">
+  <view class="wdl">
+    <image class="img" src="../../images/kb.png"></image>
+    <view style="padding:60rpx;">您还没有登陆哦~</view>
+    <button class="wxdl" bindtap="wxdl">微信授权登录</button>
+  </view>
+</block>

@@ -1,0 +1,36 @@
+.small{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top:100rpx;
+}
+.small image{
+  width:150rpx;
+  height:150rpx;
+}
+.mysmall{
+  margin-top:50rpx;
+}
+.money{
+  font-size:35px;
+  font-weight: bolder;
+}
+.btn{
+  margin-top:50%;
+}
+.chong{
+  width:50%;
+  height:80rpx;
+  background-color:lightseagreen;
+  line-height:80rpx;
+}
+.ti{
+  width:50%;
+  height:80rpx;
+  color:aquamarine;
+  background-color:#ccc;
+  margin-top:20rpx;
+  line-height:80rpx;
+}

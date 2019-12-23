@@ -1,0 +1,166 @@
+<!--导航条-->  
+<view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+</view>  
+<!--首页-->
+<block wx:if="{{hiden != 0}}">
+<view hidden="{{currentTab!==0}}">
+<scroll-view style="height:{{height}}rpx;" scroll-y="true" bindscrolltolower="onPullDownRefresh" bindscrolltoupper="topLoad" bindscroll="scroll">  
+  <view class="nei">
+    <!--顶部导航-->
+    <view class="top" style="height:{{lang <= 5 ? '200rpx' : '400rpx'}}">
+      <block wx:for="{{dataList}}" wx:for-index="id" wx:for-item="navItem" wx:key="id">
+        <navigator url="./subclass/subclass?id={{navItem.id}}&keys={{currentTab}}">
+          <view class="list">
+            <image class="img" src="{{navItem.thumb}}"></image>
+            <view class="font">{{navItem.name}}</view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+    <!--服务筛选-->
+    <view class=" screen">
+      <view class="all">
+        <view class="fonts" style="color:{{sx1 != '全部岗位' ? '#f8b71f' : '#666666'}}" bindtap='fabiao'>{{sx1}}
+          <image style="width:20rpx;height:14rpx;" src="../../images/ll.png"></image>
+        </view>
+      </view>
+      <view class="new">
+        <view class="fonts" bindtap="time" style="color:{{time == 1 ? '#f8b71f' : ''}}" data-time="{{time}}">最新发布
+          <image style="width:20rpx;height:14rpx;" src="../../images/ll.png"></image>
+        </view>
+      </view>
+      <!-- <view class="sx">
+        <view class="fonts">筛选</view>
+      </view> -->
+    </view>
+    <!--列表-->
+    <view class="demo" style="width:100%;height:100%">
+    <block wx:for="{{list}}">
+      <navigator url="../part/part?id={{item.id}}">
+      <view class="bottom">
+        <view class="btm">
+            <view class="gz">{{item.title}}</view>
+            <view class="price">{{item.money}}</view>
+        </view>
+        <view class="rq">{{item.deadline}}</view>
+        <view class="dd">{{item.place}}</view>
+      </view>
+      </navigator>
+    </block>
+    </view>
+    <!-- </scroll-view> -->
+    <!--加载动画-->
+    <view class="loadmore" hidden="{{hide == 0}}" bindtap='clickLoadMore'>
+      <image hidden="{{hide == 0}}" class="icon actives" src='../../images/zzzz.png'/>
+      <text>努力加载中</text>
+    </view>
+</view>
+    </scroll-view>
+  <view class="release">
+    <view bindtap="jump">
+      <image src="../../images/release.png"></image>
+    </view>
+  </view>
+</view>
+</block>
+<!--搜索--> 
+<block wx:if="{{hiden != 0}}">
+<view hidden="{{currentTab!==1}}">
+<scroll-view style="height:{{height}}rpx;" scroll-y="true" bindscrolltolower="onPullDownRefresh" bindscrolltoupper="topLoad" bindscroll="scroll">    
+  <view class="nei">
+    <!--顶部导航-->
+    <view class="tops" style="height:{{lang < 6 ? '200rpx' : '400rpx'}}">
+      <block wx:for="{{dataList}}" wx:for-index="id" wx:for-item="navItem" wx:key="id">
+        <navigator url="./subclass/subclass?id={{navItem.id}}&keys={{currentTab}}">
+          <view class="list">
+            <image class="img" src="{{navItem.thumb}}"></image>
+            <view class="font">{{navItem.name}}</view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+    <!--服务筛选-->
+    <view class=" screen">
+        <view class="all">
+          <view class="fonts" style="color:{{sx1 != '全部岗位' ? '#f8b71f' : ''}}" bindtap='fabiao'>{{sx1}}
+            <image style="width:20rpx;height:14rpx;" src="../../images/ll.png"></image>
+          </view>
+        </view>
+        <view class="new">
+          <view class="fonts" bindtap="time" style="color:{{time == 1 ? '#f8b71f' : ''}}" data-time="{{time}}">最新发布
+            <image style="width:20rpx;height:14rpx;" src="../../images/ll.png"></image>
+          </view>
+        </view>
+        <!-- <view class="sx">
+          <view class="fonts">筛选</view>
+        </view> -->
+    </view>
+    <!--列表-->
+    <block wx:for="{{lists}}">
+      <navigator url="../my/candidate/message/message?uid={{item.uid}}&offer=1">
+      <view class="bottoms">
+        <view class="btms">
+            <image class="avatar" src="{{item.avatarurl}}"></image>
+            <view class="gzs">{{item.nickname}}</view>
+            <view class="credit">{{item.credit}}</view>
+        </view>
+        <view class="label">
+          <block wx:for="{{item.label}}" wx:for-item="label">
+            <view class="dds">{{label}}</view>
+          </block>
+        </view>
+      </view>
+      </navigator>
+    </block>
+    <view class="loadmore" hidden="{{hide == 0}}" bindtap='clickLoadMore'>
+      <image hidden="{{hide == 0}}" class="icon actives" src='../../images/zzzz.png'/>
+      <text>努力加载中</text>
+    </view>
+<!---->
+  </view>
+  </scroll-view>
+</view>
+</block> 
+<!--返回顶部-->
+<view class="backTop" bindtap='backTop' wx:if="{{backTopValue ==true}}">
+  <!-- <text class='iconfont icon-top li-ico'></text> -->
+  <image src="../../images/top.jpg"></image>
+</view>
+<!--加载-->  
+<block wx:if="{{hiden == 0}}">
+  <view class="jzs">
+    <image class="jz actives" src="../../images/zzz.png"></image>
+  </view>
+</block>
+
+  <!--遮罩层-->
+  <view class='zhezhao' bindtap='laqi' hidden="{{flag}}">
+  <!--这是一个遮罩层，在框弹出后遮住框外区域-->
+  </view>
+  <!--这是下拉框中的内容，一个文本框和一个按钮，按钮触发拉起事件，表示拉起下拉框-->
+  <view class="test3 {{test=='test1'?'test1':'test2'}}" style='display:{{yesorno}};'>
+    <view class=" screen">
+        <view class="all">
+          <view class="fonts" style="color:#f8b71f;background-color:#FFFFFF;width:100%;" bindtap='fabiao'>全部岗位</view>
+        </view>
+        <view class="new">
+          <view class="fonts" style="background-color:#FFFFFF;width:100%;">最新发布</view>
+        </view>
+    </view>
+    <scroll-view scroll-y='true' style='height:90%;width:25%;'>
+      <view class="left" data-index="{{color}}" style="color:{{color == 0 ? '#f8b71f' : ''}}" bindtap="screen" data-id="0">全部类型</view>
+      <block wx:for="{{types}}" wx:for-item="types">
+        <view class="left" bindtap="screen" style="color:{{types.id == color ?'#f8b71f':''}}" data-id="{{types.id}}">{{types.name}}</view>
+        <!-- <view class="left">文员助理</view> -->
+      </block>
+    </scroll-view>
+    <scroll-view class="right" scroll-y='true'>
+      <block wx:for="{{type}}" wx:for-item="type">
+        <!-- <view style="font-size:13px;color:#ccc;">{{type.name}}</view> -->
+        <block class="class" wx:if="{{item.pid == type.id}}" wx:for="{{subtype}}">
+          <view class="class" bindtap="{{currentTab == 0 ? 'type' : 'types'}}" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+        </block>
+      </block>
+    </scroll-view>
+  </view>

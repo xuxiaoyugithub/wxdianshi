@@ -1,0 +1,129 @@
+/**index.wxss**/
+page{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+}
+.nav {
+    height: 80rpx;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+    background: white;
+    font-size: 16px;
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.nav-item {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+}
+.nav-item.active{
+    color: red;
+}
+.tab-box{
+    width:100%;
+    background:#F8F8F8;
+    position:absolute;
+    padding-top: 80rpx;
+    top:0rpx;
+    height: 100%;
+    box-sizing: border-box;
+}
+.tab-content{
+    overflow-y: scroll;
+}
+
+.all{
+  width:95%;
+  margin:auto;
+  background-color:white;
+  margin-top:20rpx;
+}
+.user{
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+}
+.user image{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 60rpx;
+}
+.time{
+  position:absolute;
+  right:2.5%;
+}
+.content{
+  margin-top:20rpx;
+}
+.img{
+  width:100%;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  flex-wrap:wrap;
+  /* align-items: center; */
+  /* justify-content: center; */
+  margin-top:20rpx;
+}
+.imgs{
+  width:50%;
+  height:350rpx;
+  margin-top:1rpx;
+}
+.image{
+  width:33.3%;
+  height:250rpx;
+  margin-top:1rpx;
+}
+.photo{
+  width:98%;
+  height: 98%;
+  border-radius: 20rpx;
+}
+.right {
+  width: 610rpx;
+  font-size: 24rpx;
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  /* float: left; */
+  color: #888;
+}
+.right text {
+  font-size: 24rpx;
+  padding: 13rpx 24rpx;
+  float: left;
+  border: 1px solid #888;
+  border-radius: 10rpx;
+  margin-right: 34rpx;
+  margin-top: 20rpx;
+}
+.labelColor {
+  color: #c00;
+  border: 1px solid #c00 !important;
+}
+.wdl{
+  width:100%;
+  height:80vh;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.imgg{
+  width:260rpx;
+  height:240rpx;
+  padding:60rpx;
+}

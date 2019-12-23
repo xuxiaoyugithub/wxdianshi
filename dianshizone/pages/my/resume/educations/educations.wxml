@@ -1,0 +1,102 @@
+<view class="all">
+<view class="alls">
+<form bindsubmit="formSubmit">
+  <view class="lineHeight" type="text">学校:
+     <input class='input-7' name="school" value="{{educations.school}}" placeholder='学校名称'></input>
+  </view>
+
+  <view class="lineHeight" type="text">学历
+     <!-- <input class='input-15' disabled="true" bindtap="select" value="{{education}}" name="education" placeholder='学历'></input> -->
+     <picker class="input-7" bindchange="changeMultiPicker" mode = "multiSelector" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="tui-picker-detail">
+      {{multiArray[0][multiIndex[0]]}} / {{multiArray[1][multiIndex[1]]}}
+      </view>
+    </picker>
+  </view>
+  <!-- <block wx:if="{{hiden}}">
+    <view class="lineHeight" type="text" bindtap="selected" data-education="小学">
+      <view style="text-align: center;">小学</view>
+    </view>
+    <view class="lineHeight" type="text" bindtap="selected" data-education="初中">
+      <view style="text-align: center;">初中</view>
+    </view>
+    <view class="lineHeight" type="text" bindtap="selected" data-education="高中">
+      <view style="text-align: center;">高中</view>
+    </view>
+    <view class="lineHeight" type="text" bindtap="selected" data-education="大专">
+      <view style="text-align: center;">大专</view>
+    </view>
+    <view class="lineHeight" type="text" bindtap="selected" data-education="本科">
+      <view style="text-align: center;">本科</view>
+    </view>
+    <view class="lineHeight" type="text" bindtap="selected" data-education="硕士">
+      <view style="text-align: center;">硕士</view>
+    </view>
+    <view class="lineHeight" type="text" bindtap="selected" data-education="博士">
+      <view style="text-align: center;">博士</view>
+    </view>
+  </block>
+
+  <block wx:if="{{education != '小学' && education != '初中' && education != '高中' && education != undefined}}">
+    <view class="lineHeight" type="text">制度
+     <input class='input-15' disabled="true" bindtap="selects" value="{{system}}" name="system" placeholder='是否全日制'></input>
+    </view>
+  </block>
+  <block wx:if="{{hidens}}">
+    <view class="lineHeight" type="text" bindtap="selectsed" data-system="全日制">
+      <view style="text-align: center;">全日制</view>
+    </view>
+    <view class="lineHeight" type="text" bindtap="selectsed" data-system="非全日制">
+      <view style="text-align: center;">非全日制</view>
+    </view>
+  </block> -->
+
+  <view class="lineHeight" type="number">专业:
+     <input class='input-7' name="major" value="{{educations.major}}" placeholder='专业'></input>
+  </view>
+
+  <view class="lineHeight sse" type="number">在校时间:
+    <view class="se">
+      <block wx:if="{{hide == 0}}">
+        <input class="time" name="start_time" disabled="true" bindtap="hide" value="{{educations.start_time}}" placeholder='开始时间'></input>
+      </block>
+      <block wx:if="{{hide == 1}}">
+        <picker class="time" mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+        <input name="start_time" disabled="true" value="{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}}">
+        </input>
+      </picker>
+      </block>
+      <view>---</view>
+      <block wx:if="{{hides == 0}}">
+        <input class="time" name="end_time" disabled="true" bindtap="hides" value="{{educations.end_time}}" placeholder='结束时间'></input>
+      </block>
+      <block wx:if="{{hides == 1}}">
+        <picker class="time" mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+      <input name="end_time" disabled="true" value="{{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}}"></input>
+
+      </picker>
+      </block>
+    </view>
+  </view>
+
+  <view class="lineHeight ms" type="text"><view>在校经历:</view>
+     <textarea class='input-7' name="after" value="{{educations.after}}" placeholder='在校经历'></textarea>
+  </view>
+  
+  <!-- <view class="lineHeight" type="number">结束时间:
+    <block wx:if="{{hides == 0}}">
+      <input class='input-15' name="end_time" disabled="true" bindtap="hides" value="{{educations.end_time}}" placeholder='结束时间'></input>
+    </block>
+    <block wx:if="{{hides == 1}}">
+    <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+    <input class="input-15" name="end_time" disabled="true" value="{{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}}"></input>
+
+    </picker>
+    </block>
+  </view> -->
+  <view class="btns">
+    <button formType="submit" class="btn">保存</button>
+  </view>
+  </form>
+</view>
+</view>

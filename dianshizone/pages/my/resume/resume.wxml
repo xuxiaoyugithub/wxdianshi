@@ -1,0 +1,113 @@
+<view class="b2">
+  <view class="left">
+    <view class="user">
+      <view>{{nickName}}</view>
+      <navigator url="./userdetail/userdetail">
+      <view class="update">
+        <!-- <navigator url="./userdetail/userdetail"> -->
+        <!-- <view class="btn"> -->
+          <image src="../../../images/up.png"></image>
+        <!-- </view> -->
+        <!-- </navigator> -->
+      </view>
+      </navigator>
+    </view>
+    <block wx:if="{{detail.state != undefined}}">
+      <view class="btm">{{detail.state}}
+      <image class="dian" src="../../../images/dian.png"></image>
+      {{detail.age}}岁
+      <image class="dian" src="../../../images/dian.png"></image>
+      {{detail.education}}</view>
+    </block>
+  </view>
+  <view class="photo">
+    <image src="{{avatarUrl}}"></image>
+  </view>
+</view>
+<!--个人优势-->
+  <view class="b3">
+    <view class="top">
+      <view class="xm">个人介绍</view>
+      <navigator url="./advantage/advantage?id={{str.id}}">
+        <image class="image" src="../../../images/up.png"></image>
+      </navigator>
+    </view>
+    <navigator url="./advantage/advantage?id={{str.id}}">
+      <view class="minfont">{{str.content}}</view>
+    </navigator>
+  </view>
+<!--项目经历-->
+  <view class="b3">
+    <view class="top">
+      <view class="xm">项目经历</view>
+      <navigator class="ups" url="./undergo/undergo">
+        <image class="image" src="../../../images/add.png"></image>
+      </navigator>
+    </view>
+    <block wx:for="{{undergo}}">
+      <view bindlongtap="longTap" data-id="{{item.id}}">
+        <view class="top" bindtap="jump" data-id="{{item.id}}">
+          <view class="title">{{item.project}}</view>
+          <view class="time">{{item.start_time}}至{{item.end_time}} ></view>
+        </view>
+        <view class="label">{{item.role}}</view>
+        <view class="minfont">{{item.describe}}</view>
+      </view>
+    </block>
+  </view>
+<!--教育经历-->
+  <view class="b3">
+    <view class="top">
+      <view class="xm">教育经历</view>
+      <navigator class="ups" url="./education/education">
+        <image class="image" src="../../../images/add.png"></image>
+      </navigator>
+    </view>
+    <block wx:for="{{education}}">
+      <!-- <view class="top">
+        <view class="title">{{item.school}}</view>
+        <view class="time">{{item.start_time}}至{{item.end_time}} ></view>
+      </view>
+      <navigator url="./advantage/advantage?id={{str.id}}">
+        <view class="minfont">{{item.major}}</view>
+      </navigator> -->
+      <view bindlongtap="longTap2" data-id="{{item.id}}">
+        <view class="top" bindtap="jump2" data-id="{{item.id}}">
+          <view class="title">{{item.school}}</view>
+          <view class="time">{{item.start_time}}至{{item.end_time}} ></view>
+        </view>
+        <view class="label">{{item.major}}</view>
+      </view>
+    </block>
+  </view>
+<!--曾获荣誉-->
+  <view class="b3">
+    <view class="top">
+      <view class="xm">曾获荣誉</view>
+      <navigator url="./honor/honor">
+        <image class="image" src="../../../images/add.png"></image>
+      </navigator>
+    </view>
+    <block wx:for="{{honor}}">
+      <view class="honor" bindlongtap="longTap3" bindtap="jump3" data-id="{{item.id}}">
+        <view class="minfont">{{item.content}}</view>
+        <view class="time">{{item.created_at}}</view>
+      </view>
+    </block>
+  </view>
+<!--个人标签-->
+  <view class="b3">
+    <view class="top">
+      <view class="xm">个人标签</view>
+      <navigator url="./label/label">
+        <image class="image" src="../../../images/add.png"></image>
+      </navigator>
+    </view>
+    <view class="labels">
+      <block wx:for="{{label}}">
+        <view class="border">
+          <view class="labelses">{{item.name}}</view>
+        </view>
+      </block>
+    </view>
+  </view>

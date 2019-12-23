@@ -1,0 +1,55 @@
+<view class="all">
+<view class="alls">
+<form bindsubmit="formSubmit">
+  <view class="lineHeight" type="number">名称:
+     <input class='input' name="project" value="{{res.project}}" placeholder='项目名称'></input>
+  </view>
+  <view class="lineHeight" type="number">职位:
+     <input class='input' name="role" value="{{res.role}}" placeholder='职位'></input>
+  </view>
+  <view class="lineHeight sse" type="number">开始时间:
+    <view class="se">
+      <block wx:if="{{hide == 0}}">
+        <input class="time" name="start_time" disabled="true" bindtap="hide" value="{{res.start_time}}" placeholder='开始时间'></input>
+      </block>
+      <block wx:if="{{hide == 1}}">
+        <picker class="time" mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+        <input name="start_time" disabled="true" value="{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}}">
+        </input>
+      </picker>
+      </block>
+      <view>---</view>
+      <block wx:if="{{hides == 0}}">
+        <input class="time" name="end_time" disabled="true" bindtap="hides" value="{{res.end_time}}" placeholder='结束时间'></input>
+      </block>
+      <block wx:if="{{hides == 1}}">
+        <picker class="time" mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+      <input name="end_time" disabled="true" value="{{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}}"></input>
+
+      </picker>
+      </block>
+    </view>
+  </view>
+  <view class="lineHeight ms" type="text"><view>项目描述:</view>
+     <textarea class='input-7' name="describe" value="{{res.describe}}" placeholder='项目描述'></textarea>
+  </view>
+  <view class="lineHeight ms" type="text"><view>我的贡献:</view>
+     <textarea class='input-7' name="contribute" value="{{res.contribute}}" placeholder='我的贡献'></textarea>
+  </view>
+  <!--图片-->
+  <view class='picture'>
+    <view class='left'>
+      图片
+    </view>
+    <view class='right'>
+       <view class="parcel" wx:for="{{pics}}" wx:key="{{index}}">
+       <image src="{{pics[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+       <image src="../../../../images/bb.jpg" class='deleteimg' catchtap="deleteImg" data-index="{{index}}"></image>
+       </view>
+      <image src='../../../../images/addpic.png' class='add' bindtap='choose'></image>
+    </view>
+  </view>
+  <button formType="submit" class="btn">保存</button>
+  </form>
+</view>
+</view>

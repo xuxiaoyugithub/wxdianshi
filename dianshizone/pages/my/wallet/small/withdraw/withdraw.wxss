@@ -1,0 +1,20 @@
+.all{
+  width:95%;
+  margin:auto;
+  margin-top:200rpx;
+}
+.recharge{
+  display:flex;
+  flex-direction: row;
+  border-bottom:1px solid #ccc;
+  font-size: 25px;
+}
+.btn{
+  margin-top:50%;
+}
+.chong{
+  width:50%;
+  height:80rpx;
+  background-color:lightseagreen;
+  line-height:80rpx;
+}

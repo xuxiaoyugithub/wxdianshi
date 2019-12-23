@@ -1,0 +1,66 @@
+<block wx:if="{{hiden != 0}}">
+  <scroll-view class="alls" scroll-y="true" bindscrolltolower="onPullDownRefresh" bindscrolltoupper="topLoad" bindscroll="scroll">
+    <view class="all">
+      <!--头部 导航-->
+      <view class="top_tab">
+        <view class="list" bindtap="{{uid != 0 ? 'jump1' : 'jump'}}">
+          <image class="img" src="../../images/qd.png"></image>
+          <view class="font">每日签到</view>
+        </view>
+        <view class="list" bindtap="jump2">
+          <image class="img" src="../../images/rm.png"></image>
+          <view class="font">热门任务</view>
+        </view>
+        <view class="list" bindtap="jump3">
+          <image class="img" src="../../images/ts.png"></image>
+          <view class="font">小程序特色</view>
+        </view>
+        <view class="list" bindtap="jump4">
+          <image class="img" src="../../images/jc.png"></image>
+          <view class="font">新手教程</view>
+        </view>
+      </view>
+      <!--轮播图-->
+      <view class="pics">
+        <swiper class="pics" indicator-dots="true" autoplay="true">
+          <swiper-item class="bg-green" wx:for="{{banner}}">
+            <image class="image" bindtap="bindViewTap" src="{{item.thumb}}" more="widthFix"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+      <!--文章-->
+      <block wx:for="{{space}}">
+        
+        <view class="space">
+          <image class="images" src="{{item.images[0]}}"></image>
+          <navigator url="../space/space?id={{item.id}}">
+          <view class="content">
+            {{item.content}}...
+          </view>
+          </navigator>
+          <view class="btm">
+            <view class="title">{{item.title}}</view>
+            <view class="time">{{item.created_at}}</view>
+          </view>
+          <view class="ll">
+            <view class="like">
+              <block wx:if="{{item.islike == null}}">
+                <image bindtap="{{uid != 0 ? 'likes' : 'jump'}}" data-index="{{index}}" data-sid="{{item.id}}" src="../../images/like.png"></image>
+              </block>
+              <block wx:if="{{item.islike != null}}">
+                <image src="../../images/like1.png" bindtap="cancleLike" data-index="{{index}}" data-sid="{{item.id}}"></image>
+              </block>
+              <view>{{item.dznum}}</view>
+            </view>
+          </view>
+        </view>
+        
+      </block>
+    </view>
+  </scroll-view>
+</block>
+<block wx:if="{{hiden == 0}}">
+  <view class="jzs">
+    <image class="jz actives" src="../../images/zzz.png"></image>
+  </view>
+</block>

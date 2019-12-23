@@ -1,0 +1,4 @@
+<view class="img">
+  <image src="{{img}}"></image>
+</view>
+<button type='primary' bindtap='save' class='baocun' wx:if="{{!state}}">保存分享图</button>
