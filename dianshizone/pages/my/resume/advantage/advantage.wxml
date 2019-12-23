@@ -10,7 +10,7 @@
                 auto-focus="true"
                 bindblur="changeContext"
                 value="{{res.content}}"
-                name="advantage"></textarea>
+                name="advantage" style="width:94%;border:1px solid #ccc;height:50vh;border-radius: 30rpx;padding:20rpx;"></textarea>
       <view class="btns">
         <button formType="submit" class="btn">保存</button>
       </view>

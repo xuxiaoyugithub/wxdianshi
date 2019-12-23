@@ -98,15 +98,7 @@
     <view class="top">
       <view class="xm">项目经历</view>
     </view>
-    <block wx:if="{{!mores2}}">
-      <view class="top">
-        <view class="title">{{undergo[0].project}}</view>
-        <view class="time">{{undergo[0].start_time}}至{{undergo[0].end_time}} ></view>
-      </view>
-      <view class="label">{{undergo[0].role}}</view>
-      <view class="minfont">{{undergo[0].describe}}</view>
-    </block>
-    <block wx:for="{{undergo}}" wx:if="{{mores2}}">
+    <block wx:for="{{undergo}}" wx:if="{{!mores2}}" wx:if="{{index <= 2}}">
       <view class="top">
         <view class="title">{{item.project}}</view>
         <view class="time">{{item.start_time}}至{{item.end_time}} ></view>
@@ -114,7 +106,15 @@
       <view class="label">{{item.role}}</view>
       <view class="minfont">{{item.describe}}</view>
     </block>
-    <block wx:if="{{undergo.length > 1}}">
+    <block wx:for="{{undergo}}" wx:if="{{mores2}}" wx:if="{{undergo.length > 2}}">
+      <view class="top">
+        <view class="title">{{item.project}}</view>
+        <view class="time">{{item.start_time}}至{{item.end_time}} ></view>
+      </view>
+      <view class="label">{{item.role}}</view>
+      <view class="minfont">{{item.describe}}</view>
+    </block>
+    <block wx:if="{{undergo.length > 3}}">
       <view class="more" bindtap="more2">
         <view wx:if="{{!mores2}}">
           更多
@@ -132,12 +132,14 @@
     <view class="top">
       <view class="xm">教育经历</view>
     </view>
-    <block wx:if="{{!mores3}}">
+    <block wx:for="{{education}}" wx:if="{{!mores3}}">
+      <block wx:if="{{index <= 2}}">
       <view class="top">
-        <view class="title">{{education[0].school}}</view>
-        <view class="time">{{education[0].start_time}}至{{education[0].end_time}} ></view>
+        <view class="title">{{item.school}}</view>
+        <view class="time">{{item.start_time}}至{{item.end_time}} ></view>
       </view>
-      <view class="minfont">{{education[0].major}}</view>
+      <view class="minfont">{{item.major}}</view>
+      </block>
     </block>
     <block wx:for="{{education}}" wx:if="{{mores3}}">
       <view class="top">
@@ -146,7 +148,7 @@
       </view>
       <view class="minfont">{{item.major}}</view>
     </block>
-    <block wx:if="{{education.length > 1}}">
+    <block wx:if="{{education.length > 3}}">
       <view class="more" bindtap="more3">
         <view wx:if="{{!mores3}}">
           更多
@@ -164,9 +166,11 @@
     <view class="top">
       <view class="xm">曾获荣誉</view>
     </view>
-    <block wx:if="{{!more4}}">
-      <view class="minfont">{{honor[0].content}}</view>
-      <view class="time">{{honor[0].created_at}}</view>
+    <block wx:for="{{honor}}" wx:if="{{!more4}}" wx:if="{{index <= 2}}">
+      <view style="padding-bottom:20rpx;">
+        <view class="minfont">{{item.content}}</view>
+        <view class="time">{{item.created_at}}</view>
+      </view>
     </block>
     <block wx:for="{{honor}}" wx:if="{{more4}}">
       <view style="padding-bottom:20rpx;">
@@ -174,7 +178,7 @@
         <view class="time">{{item.created_at}}</view>
       </view>
     </block>
-    <block wx:if="{{honor.length > 1}}">
+    <block wx:if="{{honor.length > 3}}">
       <view class="more" bindtap="more4">
         <view wx:if="{{!mores4}}">
           更多

@@ -12,17 +12,17 @@ Page({
       {
         text: '申请中'
       },
+      // {
+      //   text: '等待接受'
+      // },
+      // {
+      //   text: '已接受'
+      // },
       {
-        text: '等待接受'
+        text: '进行中'
       },
       {
-        text: '已接受'
-      },
-      {
-        text: '完成'
-      },
-      {
-        text: '放弃'
+        text: '已结束'
       },
     ],
     currentTab: 0,
@@ -49,6 +49,7 @@ Page({
         status: that.data.currentTab
       },
       success: function (res) {
+        console.log(res.data);
         that.setData({
           list: res.data
         })

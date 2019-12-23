@@ -20,6 +20,9 @@ page{
     top: 0;
     left: 0;
     z-index: 99;
+    display:flex;
+    justify-content: space-around;
+    text-align: center;
 }
 .nav-item {
   width: 20%;
@@ -125,6 +128,16 @@ page{
   background-color:#ccc;
   line-height:40rpx;
 } */
+.completion{
+  width:95%;
+  height:90rpx;
+  margin:auto;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#ccc;
+  line-height:40rpx;
+}
 .wdl{
   width:100%;
   height:80vh;

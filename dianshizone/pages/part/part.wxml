@@ -20,6 +20,7 @@
     <view class="title">职位要求</view>
     <text class="content" decode="{{true}}" space="{{true}}">{{res.details}}</text>
   </view>
+  <navigator url="../company/company">
   <view class="middle">
     <view class="user">
       <view><image class="image" src="{{res.avatarurl}}"></image></view>
@@ -34,8 +35,9 @@
       <view class="jt"><image style="width:24rpx;height:24rpx;" src="../../images/jt.png"></image></view>
     </view>
   </view>
+  </navigator>
 </view>
-<block wx:if="{{userid != res.uid}}">
+<!-- <block wx:if="{{userid != res.uid}}"> -->
   <block wx:if="{{status == 1}}">
     <button class="tou" bindtap="apply">申请任务</button>
   </block>
@@ -50,8 +52,10 @@
       </view>
     </block>
     <block wx:if="{{state == 5}}">
-      <button class="tous" bindtap="complete">完成任务</button>
-      <button class="tous" bindtap="giveup">放弃任务</button>
+      <view class="btn">
+        <button class="tous" bindtap="complete">完成任务</button>
+        <button class="tous" bindtap="giveup">放弃任务</button>
+      </view>
     </block>
     <block wx:if="{{state == 3}}">
       <button class="tou" style="background-color:#ccc">已完成</button>
@@ -60,7 +64,7 @@
       <button class="tou" style="background-color:#ccc">已放弃</button>
     </block>
   </block>
-</block>
+<!-- </block> -->
 </block>
 <block wx:if="{{hiden == 0}}">
   <view class="jzs">

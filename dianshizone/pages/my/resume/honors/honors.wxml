@@ -20,7 +20,7 @@
                 maxlength="100"
                 auto-focus="true"
                 bindblur="changeContext"
-                name="content" value="{{res.content}}" style="width:100%;"></textarea>
+                name="content" value="{{res.content}}" style="width:94%;border:1px solid #ccc;height:50vh;border-radius: 30rpx;padding:20rpx;"></textarea>
       <view class="btns">
         <button formType="submit" class="btn">保存</button>
       </view> 

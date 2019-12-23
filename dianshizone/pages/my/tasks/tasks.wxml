@@ -13,7 +13,7 @@
           <view></view>
           <block wx:for="{{list}}">
             <block wx:if="{{currentTab == 0}}">
-              <navigator url="../../part/part?id={{item.id}}">
+              <navigator url="../../part/part?id={{item.id}}&status={{item.status}}">
                 <view class="task">
                   <!-- <view class="title">{{item.title}}</view>
                   <view class="time">发布时间: {{item.created_at}}</view>
@@ -28,13 +28,13 @@
                     </view>
                   </view>
                   <view class="btm">
-                    <view class="state">申请中</view>
+                    <view class="state">{{item.status == 1 ? '申请中' : '待接受'}}</view>
                   </view>
                 </view>
               </navigator>
             </block>
             <block wx:if="{{currentTab == 1}}">
-              <navigator url="../../part/part?id={{item.id}}&status=2">
+              <navigator url="../../part/part?id={{item.id}}&status={{item.status}}">
                 <view class="task">
                   <!-- <view class="title">{{item.title}}</view>
                   <view class="time">发布时间: {{item.created_at}}</view>
@@ -49,14 +49,14 @@
                     </view>
                   </view>
                   <view class="btm">
-                    <view class="state">申请中</view>
+                    <view class="state">进行中</view>
                   </view>
                 </view>
                 
               </navigator>
             </block>
             <block wx:if="{{currentTab == 2}}">
-              <navigator url="../../part/part?id={{item.id}}&status=5">
+              <navigator url="../../part/part?id={{item.id}}&status={{item.status}}">
                 <view class="task">
                   <!-- <view class="title">{{item.title}}</view>
                   <view class="time">发布时间: {{item.created_at}}</view>
@@ -71,18 +71,24 @@
                     </view>
                   </view>
                   <view class="btm">
-                    <view class="state">申请中</view>
+                    <view class="state">{{item.status == 3 ? '已完成' : '已放弃'}}</view>
                   </view>
                 </view>
                 
               </navigator>
+              <block wx:if="{{item.completion == 1}}">
+                <view class="completion">等待发布者确认</view>
+              </block>
+              <block wx:if="{{item.completion == 2}}">
+                <view class="completion">已确认完成</view>
+              </block>
+              <block wx:if="{{item.completion == 3}}">
+                <view class="completion">发布者已拒绝完成</view>
+              </block>
             </block>
-            <block wx:if="{{currentTab == 3}}">
+            <!-- <block wx:if="{{currentTab == 3}}">
               <navigator url="../../part/part?id={{item.id}}&status=3">
                 <view class="task">
-                  <!-- <view class="title">{{item.title}}</view>
-                  <view class="time">发布时间: {{item.created_at}}</view>
-                  <view class="place">工作地点: {{item.place}}</view> -->
                   <view class="top">
                     <view class="left">
                       <image src="{{item.avatarurl}}"></image>
@@ -107,13 +113,10 @@
               <block wx:if="{{item.completion == 3}}">
                 <view class="completion">发布者已拒绝完成</view>
               </block>
-            </block>
-            <block wx:if="{{currentTab == 4}}">
+            </block> -->
+            <!-- <block wx:if="{{currentTab == 4}}">
               <navigator url="../../part/part?id={{item.id}}&status=4">
                 <view class="task">
-                  <!-- <view class="title">{{item.title}}</view>
-                  <view class="time">发布时间: {{item.created_at}}</view>
-                  <view class="place">工作地点: {{item.place}}</view> -->
                   <view class="top">
                     <view class="left">
                       <image src="{{item.avatarurl}}"></image>
@@ -129,7 +132,7 @@
                 </view>
                 
               </navigator>
-            </block>
+            </block> -->
           </block>
           <block wx:if="{{list.length == 0}}">
             <view class="wdl">

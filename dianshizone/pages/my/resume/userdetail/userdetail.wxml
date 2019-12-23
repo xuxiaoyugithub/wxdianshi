@@ -11,7 +11,7 @@
        <image class="photo" src="{{pics[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
        <image src="../../../../images/bb.jpg" class='deleteimg' catchtap="deleteImg" data-index="{{index}}"></image>
        </view>
-      <image src='../../../../images/www.png' class='add' bindtap='choose'></image>
+      <image src='../../../../images/jia.png' class='add' bindtap='choose'></image>
     </view>
   </view>
 
