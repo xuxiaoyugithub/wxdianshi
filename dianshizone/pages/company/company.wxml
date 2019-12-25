@@ -2,11 +2,11 @@
   <view class="top">
     <view class="t_top">
       <view class="jigou">
-        <view class="name">点识空间</view>
+        <view class="name">{{res.name}}</view>
         <view class="hy">
-          DDD
+          {{res.industry}}
           <image class="dian" src="../../images/dian.png"></image>
-          0-99人
+          {{res.number}}人
           <image class="image" src="../../images/rz.png" style="margin-left:20rpx;"></image>
         </view>
       </view>
@@ -15,76 +15,91 @@
     <view class="t_btm">
       <view class="left">
         <image class="image" src="../../images/time.png"></image>
-        <view class="time">上午10:00-下午8:00</view>
+        <view class="time">{{res.workhour}}</view>
       </view>
       <view class="follow">+关注</view>
     </view>
     <view class="t_btm1">
       <image class="image" src="../../images/tx.png"></image>
-      <view class="time">弹性工作</view>
+      <view class="time">{{res.nature}}</view>
     </view>
   </view>
   <view class="middle">
     <view class="title">公司介绍</view>
-    <view class="content">哈哈哈哈哈多或撒军多或撒军多或扩撒或多扩军撒或扩军扩多所付军付军扩付扩过付扩过扩过扩过放开你电脑卡反倒是开放的思考了广阔的临时分类的考试来看发动机抗衰老范德萨吉林福建老师放假了</view>
+    <view class="content">{{res.introduce}}</view>
   </view>
-  <view class="middle">
-    <view class="title">公司照片</view>
-    <scroll-view scroll-x="true" class="pics">
-      <image class="imgs" src="https://dianshi.ait114.com/think-5.0.7/public/uploads/20191125/024f1495717040c32cb9dbbea7a1b89a.jpg" bindtap="previewImage" data-list="{{list}}"  data-src="https://dianshi.ait114.com/think-5.0.7/public/uploads/20191125/024f1495717040c32cb9dbbea7a1b89a.jpg"></image>
-      <image class="imgs" src="../../images/vvv.jpeg" bindtap="previewImage"></image>
-      <image class="imgs" src="../../images/vvv.jpeg" bindtap="previewImage"></image>
-    </scroll-view>
-  </view>
+  <block wx:if="{{res.thumb[0] != ''}}">
+    <view class="middle">
+      <view class="title">公司照片</view>
+      <scroll-view scroll-x="true" class="pics">
+        
+        <block wx:for="{{res.thumb}}">
+          <image class="imgs" src="{{item}}" bindtap="previewImage" data-list="{{res.thumb}}"  data-src="{{item}}"></image>
+        </block>
+      </scroll-view>
+    </view>
+  </block>
   <view class="middle">
     <view class="title">公司地址</view>
-    <view class='content'>北京市海淀区</view>
+    <view class='content'>{{res.place}}</view>
   </view>
   <view class="middle">
     <view class="title">工商信息</view>
     <view class="table">
       <view class="tr">公司全称</view>
-      <view class="th">点识空间（北京）科技有限公司</view>
+      <view class="th">{{res.fullname}}</view>
     </view>
     <view class="table">
       <view class="tr">企业法人</view>
-      <view class="th">点识空间</view>
+      <view class="th">{{res.master}}</view>
     </view>
     <view class="table">
       <view class="tr">注册时间</view>
-      <view class="th">2019-09-25</view>
+      <view class="th">{{res.time}}</view>
     </view>
     <view class="table">
       <view class="tr">注册资本</view>
-      <view class="th">100万元人民币</view>
+      <view class="th">{{res.capital}}</view>
     </view>
   </view>
   <view class="bottom">
     <button class="zw" bindtap="showModal">TA的需求</button>
-    <button class="wz">TA的文章</button>
+    <!-- <button class="wz">TA的文章</button> -->
   </view>
 </view>
 <view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
   <view class="modals-cancel" bindtap="hideModal"></view>
   <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
-    <view class="m_top">
-      <view>需求</view>
-      <view style="font-size:12px;margin-left:5rpx;">6</view>
+    <view class="m_tops">
+      <view class="m_top">
+        <view>需求</view>
+        <view style="font-size:12px;margin-left:5rpx;">6</view>
+      </view>
+      <view class="m_top">
+        <view>文章</view>
+        <view style="font-size:12px;margin-left:5rpx;">6</view>
+      </view>
+      <view class="m_top">
+        <view>评价</view>
+        <view style="font-size:12px;margin-left:5rpx;">6</view>
+      </view>
     </view>
+    <scroll-view style="height:{{height}}rpx;" scroll-y="true">
     <view class="demo" style="width:100%;height:100%">
-    <!-- <block wx:for="{{list}}"> -->
+    <block wx:for="{{offer}}">
       <navigator url="../part/part?id={{item.id}}">
       <view class="bottoms">
         <view class="btm">
-            <view class="gz">哈哈哈</view>
-            <view class="price">100/小时</view>
+            <view class="gz">{{item.title}}</view>
+            <view class="price">{{item.money}}</view>
         </view>
-        <view class="rq">2019-12-23</view>
-        <view class="dd">北京市-北京市-海淀区</view>
+        <view class="rq">{{item.deadline}}</view>
+        <view class="dd">{{item.place}}</view>
       </view>
       </navigator>
-    <!-- </block> -->
+    </block>
     </view>
+    </scroll-view>
   </view>
 </view>
 <!-- <button bindtap="showModal" class="yuyue-to">立即预约</button> -->

@@ -68,7 +68,7 @@
   </view> -->
 </view>
 <view class="all">
-<block wx:for="{{userListInfo}}">
+<block wx:for="{{userListInfo}}" wx:if="{{item.isShow}}">
   <navigator url="{{uid == 0 ? '' : item.url}}" catchtap="jump" data-text="{{item.text}}">
   <view class="b2">
     <view class="left">

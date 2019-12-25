@@ -126,21 +126,22 @@
   margin-bottom:50rpx;
 }
 .bottom button{
-  width:45%;
-  height:80rpx;
+  width:490rpx;
+  height:90rpx;
   text-align: center;
-  line-height: 80rpx;
+  line-height: 90rpx;
   border-radius: 10rpx;
 }
 .zw{
-  border:1.5px solid #f8b71f;
-  color:#f8b71f;
-  background:white;
+  font-size: 20px;
+  color: white;
+  background-color: #f8b71f;
+
 }
-.wz{
+/* .wz{
   background: #f8b71f;
   color:white;
-}
+} */
 
 /*模态框*/
 .modals-cancel {
@@ -172,13 +173,19 @@
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
 }
-.m_top{
+.m_tops{
   width:90%;
   margin:auto;
   display:flex;
   flex-direction: row;
-  font-size:18px;
+  align-items: center;
+  justify-content: space-between;
   border-bottom:1px solid #ccc;
+}
+.m_top{
+  display:flex;
+  flex-direction: row;
+  font-size:18px;
   margin-top:80rpx;
   padding-bottom:20rpx;
 }

@@ -11,7 +11,6 @@ Page({
   },
   onLoad: function(e){
     var that = this;
-    console.log(wx.getStorageSync('userinfo'));
     that.setData({
       avatarurl: wx.getStorageSync('userinfo').avatarurl,
       nickname: wx.getStorageSync('userinfo').nickname,

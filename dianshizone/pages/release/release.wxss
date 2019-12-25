@@ -72,7 +72,6 @@
 .coms{
   width:20%;
   height:60rpx;
-  border:1px solid #ccc;
   padding:10rpx;
   line-height:60rpx;
   text-align: center;

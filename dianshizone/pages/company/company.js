@@ -5,7 +5,27 @@ Page({
     'https://dianshi.ait114.com/think-5.0.7/public/uploads/20191125/024f1495717040c32cb9dbbea7a1b89a.jpg',
     'https://dianshi.ait114.com/think-5.0.7/public/uploads/20191125/024f1495717040c32cb9dbbea7a1b89a.jpg'
     ],
-    hideModal: true, //模态框的状态  true-隐藏  false-显示
+    hideModal: true, //模态框的状态  true-隐藏  false-显示,
+    height: 0,
+    offer: []
+  },
+  onLoad: function(e){
+    var that = this;
+    that.setData({
+      id: e.id,
+      uid: e.uid
+    })
+    wx.request({
+      url:'https://dianshi.ait114.com/think-5.0.7/public/index.php/index/company/company',
+      data:{
+        id: e.id
+      },
+      success: function(res){
+        that.setData({
+          res: res.data
+        })
+      }
+    })
   },
   previewImage: function (event) {
     var src = event.currentTarget.dataset.src;//获取data-src
@@ -19,6 +39,21 @@ Page({
   // 显示遮罩层 
   showModal: function () {
     var that = this;
+    wx.request({
+      url: 'https://dianshi.ait114.com/think-5.0.7/public/index.php/index/company/offer',
+      data: {
+        uid: that.data.uid
+      },
+      success: function (res) {
+        var len = res.data.length;
+        that.setData({
+          res: that.data.res,
+          offer: res.data,
+          height: len * 100,
+          len: len
+        })
+      }
+    })
     that.setData({
       hideModal: false
     })

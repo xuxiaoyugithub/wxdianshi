@@ -26,7 +26,6 @@ Page({
         uid: wx.getStorageSync('userinfo').id
       },
       success: function (res) {
-        console.log(res);
         that.setData({
           res: res.data,
           status: res.data.status

@@ -28,7 +28,7 @@ Page({
       },
       success: function (res) {
         that.setData({
-          balance: res.data
+          balance: res.data.balance
         })
       }
     })

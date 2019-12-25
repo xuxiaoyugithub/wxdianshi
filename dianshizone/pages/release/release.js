@@ -18,7 +18,7 @@ Page({
     keys: 0,
     login: 0,
     AddSite: [],
-    isShow: 0,
+    // isShow: 0,
     date: '2018-10-01',
     time: '12:00',
     dateTimeArray: null,
@@ -50,26 +50,29 @@ Page({
     that.setData({
       login: login
     })
-    if (login == 1) {
-      wx.request({
-        url: 'https://dianshi.ait114.com/think-5.0.7/public/index.php/index/release/isShow',
-        data: {
-          uid: wx.getStorageSync('userinfo').id
-        },
-        success: function (res) {
-          if (res.data == 1) {
-            that.isreal();
-            that.setData({
-              isShow: 1
-            })
-          } else {
-            that.setData({
-              isShow: 2
-            })
-          }
-        }
-      })
+    if(login == 1){
+      that.isreal();
     }
+    // if (login == 1) {
+    //   wx.request({
+    //     url: 'https://dianshi.ait114.com/think-5.0.7/public/index.php/index/release/isShow',
+    //     data: {
+    //       uid: wx.getStorageSync('userinfo').id
+    //     },
+    //     success: function (res) {
+    //       if (res.data == 1) {
+    //         that.isreal();
+    //         that.setData({
+    //           isShow: 1
+    //         })
+    //       } else {
+    //         that.setData({
+    //           isShow: 2
+    //         })
+    //       }
+    //     }
+    //   })
+    // }
     // 获取完整的年月日 时分秒，以及默认显示的数组
     var obj = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
     var obj1 = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
@@ -101,7 +104,6 @@ Page({
         uid: wx.getStorageSync('userinfo').id
       },
       success: function (res) {
-        console.log(res.data);
         if (res.data != 2) {
           if (res.data.state == 1) {
             wx.showModal({
@@ -120,6 +122,7 @@ Page({
             that.setData({
               isreal: true
             })
+            that.isCompany();
           }
         } else {
           wx.showModal({
@@ -139,6 +142,22 @@ Page({
         }
       }
     })
+  },
+  //判读用户是否进行机构认证
+  isCompany: function(){
+    if (wx.getStorageSync('userinfo').iscompany == 1){
+      wx.showModal({
+        title: '机构认证',
+        content: '请先进行机构认证',
+        success: function (res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '../fillin/fillin'
+            })
+          }
+        }
+      })
+    }
   },
   formBindsubmit: function (e) {
     if (this.data.isreal) {
@@ -204,54 +223,40 @@ Page({
   formReset: function () {
 
   },
-  show: function () {
-    var that = this;
-    if (that.data.typesid == 0) {
-      const error = { param: 'title', msg: '请选择类型', value: "" }
-      this.showModal(error)
-      return false
-    }
-    wx.request({
-      url: 'https://dianshi.ait114.com/think-5.0.7/public/index.php/index/release/reShow',
-      method: 'POST',
-      data: {
-        uid: wx.getStorageSync('userinfo').id,
-        tid: that.data.typesid
-      },
-      success: function (res) {
-        if (res.data == 1) {
-          wx.showToast({
-            title: '发布成功',
-            icon: 'succes',
-            duration: 500,
-            mask: true,
-            success: function () {
-              setTimeout(function () {
-                wx.switchTab({
-                  url: '../offer/offer',
-                })
-              }, 1000) //延迟时间
-            }
-          })
-        }
-      }
-    })
-  },
-  // radio: function (e) {
-  //   this.setData({
-  //     keys: e.currentTarget.dataset.id,
-  //     detailed: '请选择',
-  //     types: '请选择',
-  //     typesid: 0
+  // show: function () {
+  //   var that = this;
+  //   if (that.data.typesid == 0) {
+  //     const error = { param: 'title', msg: '请选择类型', value: "" }
+  //     this.showModal(error)
+  //     return false
+  //   }
+  //   wx.request({
+  //     url: 'https://dianshi.ait114.com/think-5.0.7/public/index.php/index/release/reShow',
+  //     method: 'POST',
+  //     data: {
+  //       uid: wx.getStorageSync('userinfo').id,
+  //       tid: that.data.typesid
+  //     },
+  //     success: function (res) {
+  //       if (res.data == 1) {
+  //         wx.showToast({
+  //           title: '发布成功',
+  //           icon: 'succes',
+  //           duration: 500,
+  //           mask: true,
+  //           success: function () {
+  //             setTimeout(function () {
+  //               wx.switchTab({
+  //                 url: '../offer/offer',
+  //               })
+  //             }, 1000) //延迟时间
+  //           }
+  //         })
+  //       }
+  //     }
   //   })
   // },
-  // 发货地址选择,获取用户选择的单选框的值
-  // radioChange: function (e) {
-  //   this.setData({
-  //     arr_guige02: e.detail.value
-  //   })
-  //   console.log(e.detail.value)
-  // },
+  
   //省市联动
   bindRegionChange: function (e) {
     var that = this

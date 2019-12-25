@@ -1,0 +1,20 @@
+<view class="all">
+<view class="alls">
+  <view class="title">用户反馈</view>
+  <view class="text">
+    <form bindsubmit="formSubmit">
+      <textarea placeholder="请输入"
+                placeholder-classs="texts"
+                placeholder-style="color:#333;"
+                maxlength="50"
+                auto-focus="true"
+                bindblur="changeContext"
+                name="feedback" style="width:94%;border:1px solid #ccc;height:50vh;border-radius: 30rpx;padding:20rpx;"></textarea>
+      <view class="btns">
+        <button formType="submit" class="btn">保存</button>
+      </view>
+      
+    </form>
+  </view>
+</view>
+</view>

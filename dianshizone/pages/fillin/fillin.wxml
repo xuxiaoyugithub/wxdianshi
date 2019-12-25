@@ -1,0 +1,125 @@
+<block wx:if="{{show == 1}}">
+  <view class="all">
+    <form bindsubmit="formBindsubmit" bindreset="formReset">
+      <view class="inputs">
+        <view>公司名称</view>
+        <input class="input" type="text" name="name" value="{{name}}" placeholder="公司名称"></input>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>行业</view>
+        <input class="input" type="text" name="industry" value="{{industry}}" placeholder="行业"></input>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>公司人数</view>
+        <picker class="input" bindchange="changeCountry" value="{{countryIndex}}" range="{{countryList}}">
+          <view class="tui-picker-detail">{{countryList[countryIndex]}}</view>
+        </picker>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>工作时间</view>
+        <picker class="input" bindchange="changeMultiPicker" mode = "multiSelector" value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="tui-picker-detail">
+        {{multiArray[0][multiIndex[0]]}} - {{multiArray[1][multiIndex[1]]}}
+        </view>
+        </picker>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>工作性质</view>
+        <input class="input" type="text" name="nature" value="{{nature}}" placeholder="工作性质"></input>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>所在地区</view>
+        <picker style="width:70%;margin-left:10rpx;" mode="region" bindchange="bindRegionChange" value="{{detailed}}" custom-item="{{customItem}}" name="place">
+          <input disabled="true" name="place" value="{{detailed}}" placeholder="地区"></input>
+        </picker>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="text">
+        <view class="texts">公司简介</view>
+        <textarea class="textarea" name="introduce" value="{{introduce}}" placeholder="公司简介"></textarea>
+      </view>
+
+      <!--图片-->
+      <view class='picture'>
+        <view class='left'>
+          公司logo
+        </view>
+        <view class='right'>
+          <view class="parcel" wx:for="{{pics}}" wx:key="{{index}}">
+          <image class="photo" src="{{pics[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+          <image src="../../images/bb.jpg" class='deleteimg' catchtap="deleteImg" data-index="{{index}}"></image>
+          </view>
+          <image src='../../images/jia.png' class='add' bindtap='choose'></image>
+        </view>
+      </view>
+
+      <button class="btn1" formType="submit">下一步</button>
+    </form>
+  </view>
+</block>
+<block wx:if="{{show == 2}}">
+  <view class="all">
+    <form bindsubmit="submit">
+      <view class="inputs">
+        <view>公司全称*</view>
+        <input class="input" type="text" name="fullname" placeholder="公司全称"></input>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>企业法人*</view>
+        <input class="input" type="text" name="master" placeholder="企业法人"></input>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>注册时间*</view>
+        <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+          <input class="input" disabled="true" name="time" value="{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}}" placeholder="日期"></input>
+        </picker>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+      <view class="inputs">
+        <view>注册资本*</view>
+        <input class="input" type="text" name="capital" placeholder="注册资本"></input>
+        <view class="pic"><image style="width:24rpx;height:24rpx;" src="../../images/jt1.png"></image></view>
+      </view>
+
+      <!--图片-->
+      <view class='picture'>
+        <view class='left'>
+          营业执照*
+        </view>
+        <view class='right'>
+          <view class="parcel" wx:for="{{license}}" wx:key="{{index}}">
+          <image class="photo" src="{{license[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+          <image src="../../images/bb.jpg" class='deleteimg' catchtap="deleteImges" data-index="{{index}}"></image>
+          </view>
+          <image src='../../images/jia.png' class='add' bindtap='choosees'></image>
+        </view>
+      </view>
+
+      <!--图片-->
+      <view class='pictures'>
+        <view class='left' style="margin-bottom:20rpx;">
+          公司照片
+        </view>
+        <view class='right'>
+          <view class="parcel" wx:for="{{thumb}}" wx:key="{{index}}">
+          <image src="{{thumb[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImgs"></image>
+          <image src="../../images/bb.jpg" class='deleteimg' catchtap="deleteImgs" data-index="{{index}}"></image>
+          </view>
+          <image src='../../images/addpic.png' class='add' bindtap='chooses'></image>
+        </view>
+      </view>
+
+      <view class="btn">
+        <button class="btns" formType="submit">保存</button>
+        <button class="btns" bindtap="up">上一步</button>
+      </view>
+    </form>
+  </view>
+</block>

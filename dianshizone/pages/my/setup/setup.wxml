@@ -1,0 +1,33 @@
+<view class="all">
+<!-- <block wx:for="{{userListInfo}}" wx:if="{{item.hidden}}"> -->
+  <navigator url="./feedback/feedback">
+  <view class="b2">
+    <view class="left">
+      <view class="b3">
+        <image src="../../../images/sm.png"></image>
+      </view>
+      <view class="b4">
+        <view>用户反馈</view>
+      </view>
+    </view>
+    
+    <view class="listimage" style="background-image:url('https://dianshi.ait114.com/think-5.0.7/public/static/jt.png')"></view>
+  </view>
+  </navigator>
+
+  <view class="b2" bindtap="change">
+    <view class="left">
+      <view class="b3">
+        <image src="../../../images/sm.png"></image>
+      </view>
+      <view class="b4">
+        <view>切换身份</view>
+      </view>
+    </view>
+    <view class="right">
+      <view style="margin-right:10rpx;">{{identity}}</view>
+      <view class="listimage" style="background-image:url('https://dianshi.ait114.com/think-5.0.7/public/static/jt.png')"></view>
+    </view>
+  </view>
+<!-- </block> -->
+</view>

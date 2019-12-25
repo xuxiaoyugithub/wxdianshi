@@ -4,28 +4,45 @@ Page({
       {
         icon: "../../images/qianbao.png",
         text: '我的钱包',
-        url: "./wallet/wallet"
+        url: "./wallet/wallet",
+        isShow: true
       },
       {
         icon: "../../images/jl.png",
         text: '在线简历',
-        url: "./resume/resume"
+        url: "./resume/resume",
+        isShow: true
       },
       {
         icon: "../../images/release.png",
         text: '我的发布',
-        url: "./task/task"
+        url: "./task/task",
+        isShow: true
       },
       {
         icon: "../../images/sq.png",
         text: '我的申请',
-        url: "./tasks/tasks"
+        url: "./tasks/tasks",
+        isShow: true
       },
       {
         icon: "../../images/pj.png",
         text: '我的评价',
-        url: "./evaluat/evaluat"
-      }
+        url: "./evaluat/evaluat",
+        isShow: true
+      },
+      {
+        icon: "../../images/pj.png",
+        text: '机构认证',
+        url: "../fillin/fillin",
+        isShow: true
+      },
+      {
+        icon: "../../images/pj.png",
+        text: '设置',
+        url: "./setup/setup",
+        isShow: true
+      },
     ],
     info: [],
     uid: 0,
@@ -42,6 +59,7 @@ Page({
       })
       that.num();
       that.lookup();
+      that.isCompany();
       var len = wx.getStorageSync('userinfo').nickname.length;
       if(len >= 6){
         var nickname = wx.getStorageSync('userinfo').nickname.substr(0,6);
@@ -73,6 +91,7 @@ Page({
         nickname: nickname
       })
       that.num();
+      that.isCompany();
     }
     that.lookup();
   },
@@ -114,6 +133,18 @@ Page({
             })
           }
         }
+      })
+    }
+  },
+  //是否机构认证
+  isCompany: function(){
+    var that = this;
+    var user = wx.getStorageSync('userinfo');
+    var list = that.data.userListInfo;
+    if(user.iscompany == 2){
+      list[5]['isShow'] = false;
+      that.setData({
+        userListInfo:list
       })
     }
   },

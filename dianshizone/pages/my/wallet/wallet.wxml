@@ -31,15 +31,4 @@
   </view>
   </navigator>
 </block>
-<!-- <navigator url="./small/small">
-  <view class="b2">
-    <view class="b3">
-      <image src="../../../images/gg.jpg"></image>
-    </view>
-    <view class="b4">
-      <view>设置支付密码</view>
-    </view>
-    <view class="listimage" style="background-image:url()">></view>
-  </view>
-  </navigator> -->
 </view>

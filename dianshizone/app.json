@@ -19,7 +19,10 @@
     "pages/index/issue/issue",
     "pages/my/task/task",
     "pages/my/candidate/candidate",
-    "pages/my/message/message"
+    "pages/my/message/message",
+    "pages/company/company",
+    "pages/fillin/fillin",
+    "pages/my/setup/setup"
   ],
   "window": {
     "backgroundTextStyle": "light",

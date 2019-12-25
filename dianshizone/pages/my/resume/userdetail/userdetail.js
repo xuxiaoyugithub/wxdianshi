@@ -58,7 +58,7 @@ Page({
           res: res.data,
           education: res.data.education,
           system: res.data.system,
-          state: state,
+          state: that.data.countryList[state],
           pics: photo,
           multiIndex: [one,two],
           countryIndex: state

@@ -20,16 +20,16 @@
     <view class="title">职位要求</view>
     <text class="content" decode="{{true}}" space="{{true}}">{{res.details}}</text>
   </view>
-  <navigator url="../company/company">
+  <navigator url="../company/company?id={{res.id}}&uid={{res.uid}}">
   <view class="middle">
     <view class="user">
-      <view><image class="image" src="{{res.avatarurl}}"></image></view>
+      <view><image class="image" src="{{res.logo}}"></image></view>
       <view class="gs">
-        <view class="name">{{res.nickname}}</view>
+        <view class="name">{{res.name}}</view>
         <view class="hy">
-          DDD
+          {{res.industry}}
           <image class="dian" src="../../images/dian.png"></image>
-          0-99人
+          {{res.number}}
         </view>
       </view>
       <view class="jt"><image style="width:24rpx;height:24rpx;" src="../../images/jt.png"></image></view>

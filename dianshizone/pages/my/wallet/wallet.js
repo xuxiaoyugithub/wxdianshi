@@ -1,12 +1,6 @@
 Page({
   data:{
     userListInfo: [
-      // {
-      //   icon: "../../../images/lq.png",
-      //   text: '零钱',
-      //   url: "./small/small",
-      //   hidden: true
-      // },
       {
         icon: "../../../images/sm.png",
         text: '实名认证',

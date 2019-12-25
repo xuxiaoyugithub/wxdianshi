@@ -1,120 +1,175 @@
-.title{
-  display:flex;
-  font-size:18px;
-  width:95%;
-  height:100rpx;
-  line-height: 100rpx;
-  margin:auto;
+.all{
+  width:90%;
+  margin: auto;
+}
+.top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom:40rpx;
+  justify-content: space-between;
+}
+.tops{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.avatar{
+  width:104rpx;
+  height:104rpx;
+  border-radius: 52rpx;
+}
+.del{
+  width:50rpx;
+  height:55rpx;
 }
 .user{
-  width:95%;
-  height:70rpx;
-  margin-top:30rpx;
-  margin:auto;
+  display:flex;
+  flex-direction: column;
+  margin-left:30rpx;
 }
-.photo{
-  width:70rpx;
-  height:70rpx;
-  border-radius: 35rpx;
-  float:left;
+.nickname{
+  font-size:20px;
+  margin-bottom:10rpx;
+  /* font-weight: bold; */
 }
-.name{
-  float:left;
-  margin-left:25rpx;
-  line-height: 70rpx;
-  font-size:13px;
+.rq{
+  margin-top:10rpx;
+  font-size:12px;
+  color:#666666;
 }
-.time{
-  float:right;
-  line-height: 70rpx;
-  font-size:13px;
-  color:#ccc;
+.title{
+  font-size:17px;
+  margin-bottom:10rpx;
 }
 .content{
-  width:95%;
-  display: flex;
-  margin:auto;
-  margin-top:20rpx;
-  border-bottom:1px solid #ccc;
+  font-size:14px;
+  color:#333333;
 }
-.bom{
-  display: flex;
-  /*row 横向  column 列表  */
+.pics{
+  display:flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-.zhuan{
-  display: flex;
-  width:120rpx;
-  background-color:white;
-  align-items:center;
-}
-.pl{
-  display: flex;
-  /*row 横向  column 列表  */
-  /* flex-direction: row; */
-}
-.likes{
-  /* margin-left:200rpx; */
-  display: flex;
-  /*row 横向  column 列表  */
-}
-.all{
-  width:95%;
-  margin:auto;
-}
-/**分享朋友圈**/
-.share{
-  width:100%;
-  text-align: center;
-}
-/**所有评论**/
-.fg{
-  width:95%;
-  margin:auto;
-  border-bottom:1px solid #ccc;
-}
-.message{
-  width:95%;
-  margin:auto;
+  justify-content: space-between;
   margin-top:20rpx;
-  /* border-bottom:1px solid #ccc; */
-  padding:10rpx;
 }
-.messages{
-  width:89%;
-  margin-top:20rpx;
-  /* border-bottom:1px solid #ccc; */
-  padding:10rpx;
-  margin-left:50rpx;
+.img{
+  width: 215rpx;
+  height:215rpx;
 }
-.users{
+.imgs{
+  width:333rpx;
+  height:333rpx;
+}
+.images{
+  width:672rpx;
+  height:672rpx;
+}
+.m_btm{
   display:flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-top:40rpx;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 40rpx;
 }
-.users image{
-  width:70rpx;
-  height:70rpx;
-  border-radius: 35rpx;
+.m_btm image{
+  width:40rpx;
+  height:35rpx;
 }
-.nickname{
-  font-size:14px;
-  color:blue;
+.m_btms{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.num{
+  margin-left:10rpx;
+  line-height: 35rpx;
+}
+.b_btm{
+  display:flex;
+  flex-direction: row;
+  padding-top:40rpx;
+  /* padding-bottom:20rpx; */
+}
+.left{
+  width:104rpx;
+  height:104rpx;
+  border-radius: 52rpx;
+}
+.right{
+  width:85%;
+  margin-left:20rpx;
+  border-bottom:1px solid #ccc;
+  padding-bottom:20rpx;
+  display:flex;
+  flex-direction: column;
+}
+.name{
+  font-size:20px;
+  color:#333333;
+}
+.pl{
+  margin-top:30rpx;
+  font-size:15px;
+  color:#333333;
+}
+.cz{
+  margin-top:30rpx;
+  font-size:12px;
+  color:#666666;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.m_btmes{
+  width:200rpx;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.m_btmes image{
+  width:35rpx;
+  height:30rpx;
+}
+.m_btmss{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.nums{
+  margin-left:10rpx;
+  line-height: 30rpx;
+}
+.replys{
+  background-color:#e8e8e8;
+  margin-top:10rpx;
+  border-radius: 10rpx;
+}
+.reply{
+  padding:5rpx;
+  display:flex;
+  flex-direction: column;
+  font-size:13px;
+  color:#333333;
+}
+.nick{
+  font-size: 13px;
+  color: #f8b71f;
 }
 .contents{
-  width:95%;
-  margin:auto;
-  margin-top:10rpx;
-}
-.btm{
-  display: flex;
-  /*row 横向  column 列表  */
-  flex-direction: row;
-  margin-top:10rpx;
-  font-size:14px;
-  color:#ccc;
+  padding:5rpx;
+  margin-left:5rpx;
+  font-size: 15px;
+  color: #333333;
 }
 /**评论弹出狂**/
 .commentInputView{
