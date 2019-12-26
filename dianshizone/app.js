@@ -36,7 +36,9 @@ App({
   globalData: {
     userInfo: null,
     id: 0,
-    name: '请选择类型'
+    name: '请选择类型',
+    gsname: '', //公司名称
+    industry: '' //公司行业
   },
   //渐入，渐出实现 
   show: function (that, param, opacity) {

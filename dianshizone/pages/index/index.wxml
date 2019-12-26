@@ -30,8 +30,65 @@
       </view>
       <!--文章-->
       <block wx:for="{{space}}">
-        
-        <view class="space">
+        <view class="top">
+          <view class="tops">
+            <navigator url="../userdetail/userdetail?uid={{item.uid}}">
+              <image class="avatar" src="{{item.avatarurl}}"></image>
+            </navigator>
+            <view class="user">
+              <view class="nickname">{{item.nickname}}</view>
+              <view class="rq">{{item.created_at}}</view>
+            </view>
+          </view>
+          <!-- <block wx:if="{{item.uid == uid}}">
+            <image class="del" bindtap='del' data-id="{{res.id}}" src="../../images/dd.jpg"></image>
+          </block> -->
+        </view>
+        <view class="middle">
+          <view class="title">{{item.title}}</view>
+          <view class="content">
+            <navigator url="../space/space?id={{item.id}}">
+              {{item.content}}
+              <text wx:if="{{item.len}}">......</text>
+            </navigator>
+          </view>
+          <navigator wx:if="{{item.len}}" style="color:blue;" url="../space/space?id={{item.id}}">查看全文</navigator>
+          <view class="pic">
+            <block wx:for="{{item.images}}" wx:for-item="pic">
+              <block wx:if="{{item.images.length >= 3}}">
+                <image src="{{pic}}" class="imgpic" bindtap="previewImage" data-list="{{item.images}}"  data-src="{{pic}}"></image>
+              </block>
+              <block wx:if="{{item.images.length == 2}}">
+                <image src="{{pic}}" class="imgpics" bindtap="previewImage" data-list="{{item.images}}"  data-src="{{pic}}"></image>
+              </block>
+              <block wx:if="{{item.images.length == 1}}">
+                <image src="{{pic}}" class="imgpices" bindtap="previewImage" data-list="{{item.images}}"  data-src="{{pic}}"></image>
+              </block>
+            </block>
+          </view>
+          <view class="m_btm">
+            <view class="m_btms">
+              <button class="zf" open-type="share" data-title="{{res.title}}" id="{{res.id}}"><image src="../../images/zf.png"></image></button>
+            </view>
+            <view class="m_btms" bindtap='jump5' data-id="{{item.id}}">
+              <image src="../../images/pl.png"></image>
+              <view class="num">{{item.plnum}}</view>
+            </view>
+            <block wx:if="{{item.islike == null}}">
+              <view class="m_btms" bindtap="{{uid != 0 ? 'likes' : 'jump'}}" data-index="{{index}}" data-sid="{{item.id}}" src="../../images/like.png">
+                <image src="../../images/dz.png"></image>
+                <view class="num">{{item.dznum}}</view>
+              </view>
+            </block>
+            <block wx:if="{{item.islike != null}}">
+              <view class="m_btms" bindtap="cancleLike" data-index="{{index}}" data-sid="{{item.id}}">
+                <image src="../../images/dzs.png"></image>
+                <view class="num">{{item.dznum}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+        <!-- <view class="space">
           <image class="images" src="{{item.images[0]}}"></image>
           <navigator url="../space/space?id={{item.id}}">
           <view class="content">
@@ -53,7 +110,7 @@
               <view>{{item.dznum}}</view>
             </view>
           </view>
-        </view>
+        </view> -->
         
       </block>
     </view>

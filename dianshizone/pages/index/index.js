@@ -137,5 +137,19 @@ Page({
     wx.navigateTo({
       url: './course/course'
     })
+  },
+  jump5: function(e){
+    wx.navigateTo({
+      url: '../space/space?id=' + e.currentTarget.dataset.id
+    })
+  },
+  previewImage: function (event) {
+    var src = event.currentTarget.dataset.src;//获取data-src
+    var imgList = event.currentTarget.dataset.list;//获取data-list
+    //图片预览
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接
+      urls: imgList // 需要预览的图片http链接列表
+    })
   }
 })

@@ -96,6 +96,7 @@
   /* background-color:#f2f2f2; */
   display: flex;
   flex-direction: column;
+  margin-top:50rpx;
 }
 .user{
   display: flex;

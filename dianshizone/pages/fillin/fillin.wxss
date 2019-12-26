@@ -1,7 +1,6 @@
 .all{
   width:90%;
   margin:auto;
-  /* border:1px solid red; */
 }
 .inputs{
   width:90%;
@@ -97,6 +96,7 @@
   margin:auto;
   justify-content: space-between;
   margin-top:40rpx;
+  margin-bottom:40rpx;
 }
 .btns{
   width:47%;

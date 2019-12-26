@@ -2,7 +2,9 @@
 <view class="all">
   <view class="top">
     <view class="tops">
-      <image class="avatar" src="{{res.avatarurl}}"></image>
+      <navigator url="../userdetail/userdetail?uid={{res.uid}}">
+        <image class="avatar" src="{{res.avatarurl}}"></image>
+      </navigator>
       <view class="user">
         <view class="nickname">{{res.nickname}}</view>
         <view class="rq">{{res.created_at}}</view>
@@ -29,7 +31,9 @@
       </block>
     </view>
     <view class="m_btm">
-      <image open-type="share" data-title="{{res.title}}" id="{{res.id}}" src="../../images/zf.png"></image>
+      <view class="m_btms">
+        <button class="zf" open-type="share" data-title="{{res.title}}" id="{{res.id}}"><image src="../../images/zf.png"></image></button>
+      </view>
       <view class="m_btms" bindtap='focusButn' data-nickname="{{res.nickname}}">
         <image src="../../images/pl.png"></image>
         <view class="num">{{plnum}}</view>
@@ -51,7 +55,11 @@
   <view class="bottom">
   <block wx:for="{{message}}">
     <view class="b_btm">
-      <image class="left" src="{{item.avatarurl}}"></image>
+      <view class="left">
+      <navigator url="../userdetail/userdetail?uid={{item.uid}}">
+        <image src="{{item.avatarurl}}"></image>
+      </navigator>
+      </view>
       <view class="right">
         <view class="name">{{item.nickname}}</view>
         <view class="pl">{{item.content}}</view>
@@ -62,7 +70,7 @@
           <block wx:if="{{reply.uid == uid}}">
             <view class="reply" bindlongtap='delReply' data-id="{{reply.id}}" data-index="{{index}}">
               <view class="nick">{{reply.nickname}}<text style="color:#333333;">回复</text>{{reply.rnickname}}:</view>
-              <view class="contents" bindtap='focusButn' data-reid="{{reply.id}}" data-uid="{{reply.uid}}" data-id="{{item.id}}" data-nickname="{{reply.nickname}}">{{reply.content}}</view>
+              <view class="contents">{{reply.content}}</view>
             </view>
           </block>
 
@@ -80,7 +88,7 @@
           <view>{{item.created_at}} <text wx:if="{{item.uid == uid}}" bindtap='delMessage' data-id="{{item.id}}" data-index="{{index}}" style="margin-left:5rpx;">删除</text></view>
           <view class="m_btmes">
             <image src="../../images/zf.png"></image>
-            <view class="m_btmss" bindtap='focusButn' data-uid="{{item.uid}}" data-nickname="{{item.nickname}}" data-id="{{item.id}}">
+            <view wx:if="{{item.uid != uid}}" class="m_btmss" bindtap='focusButn' data-uid="{{item.uid}}" data-nickname="{{item.nickname}}" data-id="{{item.id}}">
               <image src="../../images/pl.png"></image>
               <view class="nums">1</view>
             </view>

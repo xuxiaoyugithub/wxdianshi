@@ -55,7 +55,7 @@
   <block wx:for="{{res}}">
     <view class="likes">
       <view class="user">
-        <image src="../../../images/aaa.jpg"></image>
+        <image src="../../../images/vvv.jpeg"></image>
         <view>系统通知</view>
       </view>
       <!-- <navigator url="../../userdetail/userdetail?uid={{item.user}}"> -->

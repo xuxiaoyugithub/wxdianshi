@@ -1,6 +1,6 @@
 <!--导航条-->  
 <view class="navbar">  
-  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+  <!-- <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>   -->
 </view>  
 <!--首页-->
 <block wx:if="{{hiden != 0}}">
@@ -57,11 +57,7 @@
     </view>
 </view>
     </scroll-view>
-  <view class="release">
-    <view bindtap="jump">
-      <image src="../../images/release.png"></image>
-    </view>
-  </view>
+  
 </view>
 </block>
 <!--搜索--> 
@@ -120,6 +116,11 @@
 <!---->
   </view>
   </scroll-view>
+  <view class="release">
+    <view bindtap="jump">
+      <image src="../../images/release.png"></image>
+    </view>
+  </view>
 </view>
 </block> 
 <!--返回顶部-->
@@ -141,12 +142,12 @@
   <!--这是下拉框中的内容，一个文本框和一个按钮，按钮触发拉起事件，表示拉起下拉框-->
   <view class="test3 {{test=='test1'?'test1':'test2'}}" style='display:{{yesorno}};'>
     <view class=" screen">
-        <view class="all">
+        <view class="alls">
           <view class="fonts" style="color:#f8b71f;background-color:#FFFFFF;width:100%;" bindtap='fabiao'>全部岗位</view>
         </view>
-        <view class="new">
+        <!-- <view class="new">
           <view class="fonts" style="background-color:#FFFFFF;width:100%;">最新发布</view>
-        </view>
+        </view> -->
     </view>
     <scroll-view scroll-y='true' style='height:90%;width:25%;'>
       <view class="left" data-index="{{color}}" style="color:{{color == 0 ? '#f8b71f' : ''}}" bindtap="screen" data-id="0">全部类型</view>

@@ -1,5 +1,5 @@
 .screen{
-  width:95%;
+  width:100%;
   height:80rpx;
   /* margin-top:10rpx; */
   border-top:1px solid #ccc;
@@ -8,6 +8,12 @@
 }
 .all{
   width:49.2%;
+  height:80rpx;
+  /* border-right:1px solid #ccc; */
+  float:left;
+}
+.alls{
+  width:100%;
   height:80rpx;
   /* border-right:1px solid #ccc; */
   float:left;

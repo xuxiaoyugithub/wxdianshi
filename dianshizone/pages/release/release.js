@@ -122,7 +122,7 @@ Page({
             that.setData({
               isreal: true
             })
-            that.isCompany();
+            // that.isCompany();
           }
         } else {
           wx.showModal({
@@ -130,8 +130,12 @@ Page({
             content: '请先前去进行实名认证',
             success: function (res) {
               if (res.confirm) {
-                wx.navigateTo({
+                wx.redirectTo({
                   url: '../my/wallet/realname/realname'
+                })
+              }else{
+                wx.navigateBack({
+                  delta: 1,
                 })
               }
             }
@@ -142,22 +146,6 @@ Page({
         }
       }
     })
-  },
-  //判读用户是否进行机构认证
-  isCompany: function(){
-    if (wx.getStorageSync('userinfo').iscompany == 1){
-      wx.showModal({
-        title: '机构认证',
-        content: '请先进行机构认证',
-        success: function (res) {
-          if (res.confirm) {
-            wx.navigateTo({
-              url: '../fillin/fillin'
-            })
-          }
-        }
-      })
-    }
   },
   formBindsubmit: function (e) {
     if (this.data.isreal) {

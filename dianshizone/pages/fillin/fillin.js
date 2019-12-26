@@ -2,10 +2,11 @@ import WxValidate from '../../utils/WxValidate.js';
 var dateTimePicker = require('../../utils/dateTimePicker.js');
 var calls = require("../../utils/util.js")
 var city = '';
+const app = getApp();
 Page({
   data:{
-    name: '',//公司名称
-    industry: '',//行业
+    // name: '',//公司名称
+    // industry: '',//行业
     number: '',//公司人数
     nature: '',//工作性质
     introduce: '',//公司简介
@@ -229,8 +230,8 @@ Page({
       return false
     }
     that.setData({
-      name: e.detail.value.name,
-      industry: e.detail.value.industry,
+      // name: e.detail.value.name,
+      // industry: e.detail.value.industry,
       introduce: e.detail.value.introduce,
       nature: e.detail.value.nature,
       number: e.detail.value.number,
@@ -244,6 +245,11 @@ Page({
       show: 1
     })
   },
+  ups: function () {
+    wx.redirectTo({
+      url: '../fillins/fillins',
+    })
+  },
   //报错 
   showModal(error) {
     wx.showModal({
@@ -254,13 +260,13 @@ Page({
   //验证函数
   initValidate() {
     const rules = {
-      name: {
-        required: true,
-        maxlength: 128
-      },
-      industry: {
-        required: true
-      },
+      // name: {
+      //   required: true,
+      //   maxlength: 128
+      // },
+      // industry: {
+      //   required: true
+      // },
       number: {
         requeired: true
       },
@@ -275,13 +281,13 @@ Page({
       }
     }
     const messages = {
-      name: {
-        required: '请输入公司名称',
-        minlength: '最多只能输入128个字符'
-      },
-      industry: {
-        required: '请输入行业'
-      },
+      // name: {
+      //   required: '请输入公司名称',
+      //   minlength: '最多只能输入128个字符'
+      // },
+      // industry: {
+      //   required: '请输入行业'
+      // },
       introduce: {
         required: '请输入公司简介'
       },
@@ -391,6 +397,10 @@ Page({
 
     var thumb = that.data.thumb;
     var photo = '';
+    wx.showLoading({
+      title: '玩命加载中',
+      mask: true
+    })
     wx.uploadFile({
       url: 'https://dianshi.ait114.com/think-5.0.7/public/index.php/index/uploads/uploads',
       filePath: that.data.pics[0],
@@ -455,8 +465,8 @@ Page({
         url: 'https://dianshi.ait114.com/think-5.0.7/public/index.php/index/company/index',
         data:{
           uid: wx.getStorageSync('userinfo').id,
-          name: that.data.name,
-          industry: that.data.industry,
+          name: app.globalData.gsname,
+          industry: app.globalData.industry,
           number: that.data.countryList[that.data.countryIndex],
           workhour: that.data.multiArray[0][that.data.multiIndex[0]] + '-' + that.data.multiArray[1][that.data.multiIndex[1]],
           nature: that.data.nature,
@@ -498,6 +508,6 @@ Page({
           }
         }
       })
-    },1000)
+    },2000)
   }
 })

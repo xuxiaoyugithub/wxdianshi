@@ -3,12 +3,12 @@
 <view class=" screen">
   <view class="all">
     <view class="fonts" style="color:{{sx1 != '全部岗位' ? '#f8b71f' : ''}}" bindtap='fabiao'>{{sx1}}
-      <image style="width:20rpx;height:20rpx;" src="../../../images/ll.jpg"></image>
+      <image style="width:20rpx;height:14rpx;" src="../../../images/ll.png"></image>
     </view>
   </view>
   <view class="new">
     <view class="fonts" bindtap="time" style="color:{{time == 1 ? '#f8b71f' : ''}}" data-time="{{time}}">最新发布
-      <image style="width:20rpx;height:20rpx;" src="../../../images/ll.jpg"></image>
+      <image style="width:20rpx;height:14rpx;" src="../../../images/ll.png"></image>
     </view>
   </view>
   <!-- <view class="sx">
@@ -69,12 +69,12 @@
       <textarea class='ta' placeholder="元芳，有何要说的么？" auto-focus />
     </view> -->
     <view class=" screen">
-        <view class="all">
+        <view class="alls">
           <view class="fonts" style="color:#f8b71f;background-color:#FFFFFF" bindtap='fabiao'>全部岗位</view>
         </view>
-        <view class="new">
+        <!-- <view class="new">
           <view class="fonts" style="background-color:#FFFFFF">最新发布</view>
-        </view>
+        </view> -->
         <!-- <view class="sx">
           <view class="fonts" style="background-color:#FFFFFF">筛选</view>
         </view> -->

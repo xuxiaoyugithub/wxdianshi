@@ -2,5 +2,6 @@
   "usingComponents": {},
   "backgroundTextStyle": "dark",
   "enablePullDownRefresh": true,
-  "onReachBottomDistance": 10
+  "onReachBottomDistance": 10,
+  "navigationBarTitleText": "任务分类"
 }

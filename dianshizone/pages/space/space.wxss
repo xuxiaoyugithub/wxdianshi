@@ -52,18 +52,22 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top:20rpx;
+  flex-wrap: wrap;
 }
 .img{
-  width: 215rpx;
-  height:215rpx;
+  width: 220rpx;
+  height:220rpx;
+  padding-top:10rpx;
 }
 .imgs{
   width:333rpx;
   height:333rpx;
+  padding-top:10rpx;
 }
 .images{
   width:672rpx;
   height:672rpx;
+  padding-top:10rpx;
 }
 .m_btm{
   display:flex;
@@ -74,6 +78,18 @@
   margin-top:40rpx;
   border-bottom: 1px solid #ccc;
   padding-bottom: 40rpx;
+}
+.zf{
+  width:40rpx;
+  height:35rpx;
+  background-color: white;
+  position:relative;
+  /* border: 1px solid white; */
+}
+.zf image{
+  position:absolute;
+  top:0rpx;
+  left:0rpx;
 }
 .m_btm image{
   width:40rpx;
@@ -93,9 +109,13 @@
   display:flex;
   flex-direction: row;
   padding-top:40rpx;
-  /* padding-bottom:20rpx; */
 }
 .left{
+  width:104rpx;
+  height:104rpx;
+  border-radius: 52rpx;
+}
+.left image{
   width:104rpx;
   height:104rpx;
   border-radius: 52rpx;

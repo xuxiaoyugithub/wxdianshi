@@ -3,7 +3,7 @@
 <view class='title' style='height:{{navH}}px'  catchtouchmove='true'>
   <view class='title-text'>消息中心</view>
   <!-- 私信、通知切换栏 -->
-<view class="selectTab" style='margin-top:{{navH}}px' catchtouchmove='true'>
+<view class="selectTab" catchtouchmove='true'>
   <view class="flex-row">
     <view class="message {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
     私信
@@ -32,7 +32,8 @@
 <!--私信消息列表-->
 <scroll-view scroll-y="true" class="message-list" style="margin-top:{{navH+47}}px;height:1200rpx"  wx:if="{{currentTab==0}}" >
   <!--示例用户1-->
-  <view>1231312</view>
+  <!-- <view>1231312</view> -->
+  <navigator url="./chat/chat">
   <view style="height:20rpx;"></view>
   <view class='user' bindtap='goTocontactPage'>
   <image class='header-icon' src='https://b267.photo.store.qq.com/psb?/V13v0ZyH3zvYu7/9Ne*obpt0tAkfi3fZZij7.1VF4qT363gGq021zfYWQ0!/b/dAsBAAAAAAAA&bo=bgFuAQAAAAAFByQ!&rf=viewer_4'></image>
@@ -42,9 +43,9 @@
       <view class='username'>
         <text>测试1</text>
       </view>
-      <view class='cooperation'>
-        <image src='./images/6.png'></image>
-      </view>
+      <!-- <view class='cooperation'>
+        <image src='../../images/aa.jpg'></image>
+      </view> -->
       </view>
       <view class='time'>
         <view class='time-num'>9:36</view>
@@ -62,8 +63,10 @@
     </view>
   </view>
   </view>
+  
 <!--分割线-->
 <view class='linecut'></view>
+</navigator>
   <!--示例用户2-->
   <view class='user' bindtap='goTocontactPage'>
   <image class='header-icon' src='https://b267.photo.store.qq.com/psb?/V13v0ZyH3zvYu7/9Ne*obpt0tAkfi3fZZij7.1VF4qT363gGq021zfYWQ0!/b/dAsBAAAAAAAA&bo=bgFuAQAAAAAFByQ!&rf=viewer_4'></image>

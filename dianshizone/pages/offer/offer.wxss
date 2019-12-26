@@ -118,6 +118,12 @@ page{
   /* border-right:1px solid #ccc; */
   float:left;
 }
+.alls{
+  width:100%;
+  height:88rpx;
+  /* border-right:1px solid #ccc; */
+  float:left;
+}
 .new{
   width:49.2%;
   height:88rpx;

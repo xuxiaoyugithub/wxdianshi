@@ -10,7 +10,7 @@
           <image class="image" src="../../images/rz.png" style="margin-left:20rpx;"></image>
         </view>
       </view>
-      <image class="img" src="../../images/vvv.jpeg"></image>
+      <image class="img" src="{{res.logo}}"></image>
     </view>
     <view class="t_btm">
       <view class="left">
@@ -72,7 +72,7 @@
   <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
     <view class="m_tops">
       <view class="m_top">
-        <view>需求</view>
+        <view style="color:#f8b71f;">需求</view>
         <view style="font-size:12px;margin-left:5rpx;">6</view>
       </view>
       <view class="m_top">

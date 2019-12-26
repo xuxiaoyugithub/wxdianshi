@@ -34,7 +34,7 @@ Page({
       {
         icon: "../../images/pj.png",
         text: '机构认证',
-        url: "../fillin/fillin",
+        url: "../fillins/fillins",
         isShow: true
       },
       {
@@ -51,44 +51,56 @@ Page({
     credit: 0,
     state: 0
   },
-  onLoad:function(){
-    var that = this;
-    if (wx.getStorageSync('userinfo')) {
-      that.setData({
-        uid: wx.getStorageSync('userinfo').id
-      })
-      that.num();
-      that.lookup();
-      that.isCompany();
-      var len = wx.getStorageSync('userinfo').nickname.length;
-      if(len >= 6){
-        var nickname = wx.getStorageSync('userinfo').nickname.substr(0,6);
-        nickname = nickname + '..';
-      }else{
-        var nickname = wx.getStorageSync('userinfo').nickname;
-      }
-      that.setData({
-        avatarurl: wx.getStorageSync('userinfo').avatarurl,
-        nickname: nickname
-      })
-    }
-  },
+  // onLoad:function(){
+  //   var that = this;
+  //   if (wx.getStorageSync('userinfo')) {
+  //     that.setData({
+  //       uid: wx.getStorageSync('userinfo').id
+  //     })
+  //     that.num();
+  //     that.lookup();
+  //     that.isCompany();
+  //     var len = wx.getStorageSync('userinfo').nickname.length;
+  //     if(len >= 6){
+  //       var nickname = wx.getStorageSync('userinfo').nickname.substr(0,6);
+  //       nickname = nickname + '..';
+  //     }else{
+  //       var nickname = wx.getStorageSync('userinfo').nickname;
+  //     }
+  //     that.setData({
+  //       avatarurl: wx.getStorageSync('userinfo').avatarurl,
+  //       nickname: nickname
+  //     })
+  //   }
+  // },
   onShow: function(){
     var that = this
     if (wx.getStorageSync('userinfo') != []){
+      var user = wx.getStorageSync('userinfo');
       var len = wx.getStorageSync('userinfo').nickname.length;
+      var list = that.data.userListInfo;
       if (len >= 6) {
         var nickname = wx.getStorageSync('userinfo').nickname.substr(0, 6);
         nickname = nickname + '..';
       } else {
         var nickname = wx.getStorageSync('userinfo').nickname;
       }
+      if (wx.getStorageSync('userinfo').identity == 1){
+        list[2]['isShow'] = false;
+        list[1]['isShow'] = true;
+        list[3]['isShow'] = true;
+      }else{
+        list[1]['isShow'] = false;
+        list[3]['isShow'] = false;
+        list[2]['isShow'] = true;
+      }
       //更新数据
       that.setData({
         info: wx.getStorageSync('userinfo'),
         uid: wx.getStorageSync('userinfo').id,
         avatarurl: wx.getStorageSync('userinfo').avatarurl,
-        nickname: nickname
+        nickname: nickname,
+        userListInfo: list
       })
       that.num();
       that.isCompany();

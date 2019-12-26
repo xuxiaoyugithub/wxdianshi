@@ -1,0 +1,35 @@
+.all{
+  width:90%;
+  margin:auto;
+}
+.inputs{
+  width:90%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom:1px solid #ccc;
+  padding:30rpx;
+  font-size:14px;
+}
+.input{
+  width:73%;
+  margin-left:15rpx;
+  font-size:14px;
+  /* color:#999999; */
+}
+.pic{
+  position:absolute;
+  right:7%;
+  font-size:18px;
+}
+.btn1{
+  position:absolute;
+  bottom: 200rpx;
+  width:90%;
+  height:80rpx;
+  font-size:18px;
+  line-height:80rpx;
+  background:linear-gradient(#F8E380,#f8b71f);
+  color:white;
+}

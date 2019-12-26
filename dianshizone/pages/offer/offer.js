@@ -55,12 +55,47 @@ Page({
   },
   onLoad: function () {
     var that = this;
-    this.list();
+    wx.request({
+      url:'https://dianshi.ait114.com/think-5.0.7/public/index.php/index/offer/types',
+      success: function(res){
+        that.setData({
+          dataList: res.data,
+          types: res.data,
+          lang: res.data.length
+        })
+      }
+    })
     setTimeout(function(){
       that.setData({
         hiden:1
       })
     },1000)
+  },
+  onShow: function(){
+    var that = this;
+    if (wx.getStorageSync('userinfo').identity == 1){
+      that.setData({
+        currentTab: 0,
+        page: 0,
+        list: [],
+        lists: [],
+        id: 0,
+        time: 0,
+        hiden: 1
+      })
+      that.list();
+    }else{
+      that.setData({
+        currentTab: 1,
+        page: 0,
+        list: [],
+        lists: [],
+        id: 0,
+        time: 0,
+        hiden: 1
+      })
+      that.lists();
+    }
   },
   list: function(){
     var that = this;
@@ -84,13 +119,10 @@ Page({
 
         that.setData({
           list: lists,
-          dataList: res.data.types,
-          types: res.data.types,
           sx1: '全部岗位',
           height: len * 150 + 360,
           page: that.data.page + 1,
-          hide: 0,
-          lang: res.data.types.length
+          hide: 0
         })
       }
     })
@@ -105,7 +137,7 @@ Page({
         time: that.data.time
       },
       success: function (res) {
-        console.log(res.data);
+        console.log(res);
         if (res.data == []) {
           that.setData({
             page: that.data.page - 1
@@ -118,7 +150,7 @@ Page({
         that.setData({
           lists: lists,
           sx1: '全部岗位',
-          height: len * 160 + 360,
+          height: len * 165 + 360,
           page: that.data.page + 1,
           hide: 0
         })
