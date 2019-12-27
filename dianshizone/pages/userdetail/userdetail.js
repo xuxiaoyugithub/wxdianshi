@@ -154,5 +154,11 @@ Page({
     wx.redirectTo({
       url: '../userdetail/userdetail?uid=' + uid
     })
+  },
+  chat: function(){
+    var that = this;
+    wx.redirectTo({
+      url: '../text/chat/chat?uid=' + that.data.uid + '&nickname=' + that.data.user.nickname + '&avatarurl=' + that.data.user.avatarurl
+    })
   }
 })

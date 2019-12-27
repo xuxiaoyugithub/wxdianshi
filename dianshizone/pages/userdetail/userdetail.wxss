@@ -7,15 +7,22 @@
   border-top:1px solid #ccc;
   border-bottom:1px solid #ccc;
 }
+.chat{
+  display:flex;
+  padding:10rpx;
+  position:absolute;
+  top:40rpx;
+  color:#f8b71f;
+}
 .user image{
   width:120rpx;
   height:120rpx;
   border-radius: 60rpx;
-  /* margin-left:30rpx; */
   transform: translate(20%,27%);
 }
 .name{
   margin-left:30rpx;
+  position:relative;
 }
 .gz{
   position:absolute;

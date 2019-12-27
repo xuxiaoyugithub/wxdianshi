@@ -1,7 +1,8 @@
 <view wx:if="{{hiden != 0}}">
   <view class="user">
     <image src="{{user.avatarurl}}"></image>
-    <view class="name">{{user.nickname}}</view>
+    <view class="name">{{user.nickname}}<view class="chat" bindtap="chat">私信</view></view>
+    
     <block wx:if="{{userid == uid}}">
       <navigator url="./userdata/userdata?uid={{uid}}">
         <view class="gz">个人资料</view>
@@ -11,6 +12,7 @@
       <view wx:if="{{state == 0}}" class="gz" bindtap="follow">+关注</view>
       <view wx:if="{{state == 1}}" class="gz" bindtap="cancels" data-bgid="{{uid}}" data-gzid="{{userid}}">取消关注</view>
     </block>
+    
   </view>
   <view class="middle">
     <view class="num">

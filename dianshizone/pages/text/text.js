@@ -16,7 +16,8 @@ Page({
     likes: 0,
     message: 0,
     follow: 0,
-    count: 0
+    count: 0,
+    chatlist: []
   },
   onShow:function(){
     var that = this;
@@ -31,14 +32,30 @@ Page({
         uid: wx.getStorageSync('userinfo').id
       },
       success: function (res) {
-        console.log(res);
         that.setData({
           private: res.data.private,
           notice: res.data.notice
         })
       }
     })
+    that.chatlist();
     that.notice();
+  },
+  //聊天者列表
+  chatlist: function(){
+    var that = this;
+    wx.request({
+      url:'https://dianshi.ait114.com/think-5.0.7/public/index.php/index/chat/chatlist',
+      data:{
+        uid: wx.getStorageSync('userinfo').id
+      },
+      success: function(res){
+        console.log(res.data);
+        that.setData({
+          chatlist: res.data
+        })
+      }
+    })
   },
   //事件处理函数
   clickTab: function(event){
@@ -76,5 +93,20 @@ Page({
     wx.navigateTo({
       url: '../login/login'
     })
+  },
+  //下拉刷新
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+
+    //模拟加载
+    var that = this;
+    that.chatlist();
+    setTimeout(function () {
+
+      wx.hideNavigationBarLoading() //完成停止加载
+
+      wx.stopPullDownRefresh() //停止下拉刷新
+
+    }, 1500);
   }
 })
